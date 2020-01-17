@@ -1,44 +1,23 @@
 <!DOCTYPE html>
 <html>
-
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Story Template</title>
-    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
-    	<!-- do media queries in css for diff sizes 
-    		THINGS TO CONSIDER: chars per line
-    		FOR THURS 1/16: style the text
-    		start with mobile, then desktop-->
     <style>[v-cloak] { display: none; }</style>
-    	<!-- v-cloak is a selector. hides everything w/ v-cloak attribute. used by "view" js library -->
-
-    <link href="styles.css" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Gelasio|Roboto&display=swap" rel="stylesheet">
-
   </head>
-
-
   <body>
     <div id="news-template" v-cloak>
       
       <!-- Main Story -->
-
-      <div class="title">{{ story.title }}</div>
-      <div class="subtitle">{{ story.subtitle }}</div>
-      <div class="date">{{ story.date }}</div>
-	      <!-- {{ these are called tokens }} -->
-
-      <span v-for="tag in story.tags" class="tags">{{ tag }}</span>
+      {{ story.title }}
+      {{ story.subtitle }}
+      {{ story.date }}
+      <span v-for="tag in story.tags">{{ tag }}</span>
       <img v-bind:src="story.image.url">
       {{ story.image.caption }}
-      	<!-- hierarchy abt what's in the token: story then img then caption -->
-
-      <div class="source"><a v-bind:href="story.source.url">{{ story.source.name }}</a></div>
-      
-      <div class="teaser"><span v-html="story.teaser"></span></div> 
-      
-      <div class="content"><span v-html="story.content"></span></div>
-      	<!-- txt includes html markup of their own. putting v-html helps "view" render as such -->
+      <a v-bind:href="story.source.url">{{ story.source.name }}</a>
+      <span v-html="story.teaser"></span>
+      <span v-html="story.content"></span>
 
       <!-- Related Stories-->
       <ul>
@@ -51,8 +30,8 @@
       </ul>
 
       <!-- Useful debugging info, you can comment this section out when you don't need it. -->
-      <!-- <pre>The story object: {{ story | json }}</pre>
-      <pre>The relatedStories array: {{ relatedStories | json }}</pre> -->
+      <pre>The story object: {{ story | json }}</pre>
+      <pre>The relatedStories array: {{ relatedStories | json }}</pre>
 
     </div>
 
