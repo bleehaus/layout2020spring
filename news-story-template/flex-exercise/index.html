@@ -25,22 +25,33 @@
 
       <div class="title">{{ story.title }}</div>
       <div class="subtitle">{{ story.subtitle }}</div>
-      <div class="date">{{ story.date }}</div>
+      <span class="date">{{ story.date }}</span>
 	      <!-- {{ these are called tokens }} -->
 
-      <span v-for="tag in story.tags" class="tags">{{ tag }}</span>
+      <span v-for="tag in story.tags" class="tags"><a href="https://www.washingtonpost.com/">{{ tag }}</a></span>
       <img v-bind:src="story.image.url">
-      {{ story.image.caption }}
+      <div class="caption">{{ story.image.caption }}
       	<!-- hierarchy abt what's in the token: story then img then caption -->
 
-      <div class="source"><a v-bind:href="story.source.url">{{ story.source.name }}</a></div>
+     <a v-bind:href="story.source.url">{{ story.source.name }}</a></div>
+
+     <hr>
+
+    <article>
       
-      <div class="teaser"><span v-html="story.teaser"></span></div> 
+      	<div class="teaser"><span v-html="story.teaser"></span></div> 
+
       
-      <div class="content"><span v-html="story.content"></span></div>
+      	<div class="content"><span v-html="story.content"></span></div>
+
+      	<br><hr>
+
+  	</article>
       	<!-- txt includes html markup of their own. putting v-html helps "view" render as such -->
 
-      <!-- Related Stories-->
+      <div class="related_header">Related Stories</div>
+
+    <div class="related">
       <ul>
         <li v-for="relatedStory in relatedStories">
           <div v-on:click="load(relatedStory)">
@@ -49,6 +60,7 @@
           </div>
         </li>
       </ul>
+    </div>
 
       <!-- Useful debugging info, you can comment this section out when you don't need it. -->
       <!-- <pre>The story object: {{ story | json }}</pre>
