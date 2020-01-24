@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <title>News Story Template</title>
-    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <title>News Story Template</title>
+  <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     	<!-- do media queries in css for diff sizes 
     		THINGS TO CONSIDER: chars per line
     		FOR THURS 1/16: style the text
     		start with mobile, then desktop-->
-    <style>[v-cloak] { display: none; }</style>
-    	<!-- v-cloak is a selector. hides everything w/ v-cloak attribute. used by "view" js library -->
+        <style>[v-cloak] { display: none; }</style>
+        <!-- v-cloak is a selector. hides everything w/ v-cloak attribute. used by "view" js library -->
 
-    <link href="styles.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Gelasio|Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Gelasio|Roboto&display=swap" rel="stylesheet">
 
-  </head>
-
-
-  <body>
+</head>
 
 
-    <div id="news-template" v-cloak>
-      
-      <!-- Main Story -->
+<body>
 
-      <header>
-        <img v-bind:src="story.image.url">
-        <div class="title">{{ story.title }}</div>
-      </header>
 
-      <content>
+  <div id="news-template" v-cloak>
 
-     
+  <!-- Main Story -->
+
+    <header>
+      <img v-bind:src="story.image.url">
+      <div class="title">{{ story.title }}</div>
+    </header>
+
+    <div class="content">
+
       <div class="subtitle">{{ story.subtitle }}</div>
-      <span class="date">{{ story.date }}</span>
-	      <!-- {{ these are called tokens }} -->
+        <span class="date">{{ story.date }}</span>
+        <!-- {{ these are called tokens }} -->
 
-      <span v-for="tag in story.tags" class="tags"><a href="https://www.washingtonpost.com/">{{ tag }}</a></span>
-     
-      <div class="caption">{{ story.image.caption }}
-      	<!-- hierarchy abt what's in the token: story then img then caption -->
+        <span v-for="tag in story.tags" class="tags"><a href="https://www.washingtonpost.com/">{{ tag }}</a></span>
+        <br><br>
+        <div class="caption">{{ story.image.caption }}
+             <!-- hierarchy abt what's in the token: story then img then caption -->
+            <a v-bind:href="story.source.url">{{ story.source.name }}</a>
+        </div>
 
-     <a v-bind:href="story.source.url">{{ story.source.name }}</a></div>
-
-     <hr>
+    <hr>
 
     <article>
-      
-      	<div class="teaser"><span v-html="story.teaser"></span></div> 
 
-      
-      	<div class="content"><span v-html="story.content"></span></div>
+      <div class="teaser"><span v-html="story.teaser"></span></div> 
 
-      	<br><hr>
+      <span v-html="story.content"></span>
 
-  	</article>
-      	<!-- txt includes html markup of their own. putting v-html helps "view" render as such -->
+      <br><hr>
 
-      <div class="related_header">Related Stories</div>
+    </article>
+    <!-- txt includes html markup of their own. putting v-html helps "view" render as such -->
+
+    <span class="related_header">Related Stories</span>
 
     <div class="related">
       <ul>
@@ -71,16 +69,16 @@
       </ul>
     </div>
 
-  </content>
+  </div>
 
-      <!-- Useful debugging info, you can comment this section out when you don't need it. -->
+          <!-- Useful debugging info, you can comment this section out when you don't need it. -->
       <!-- <pre>The story object: {{ story | json }}</pre>
-      <pre>The relatedStories array: {{ relatedStories | json }}</pre> -->
+        <pre>The relatedStories array: {{ relatedStories | json }}</pre> -->
 
-    </div>
+  </div>
 
-    <!-- Scripts here are what load the Vue library, and the actual story content. -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://abesiemsen.github.io/layout2020spring-resources/projects/news-story-template/data.js"></script>
-  </body>
-</html>
+      <!-- Scripts here are what load the Vue library, and the actual story content. -->
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="https://abesiemsen.github.io/layout2020spring-resources/projects/news-story-template/data.js"></script>
+    </body>
+    </html>
