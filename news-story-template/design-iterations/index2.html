@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>News Story Template</title>
+  <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    	
+        <style>[v-cloak] { display: none; }</style>
+        <!-- v-cloak is a selector. hides everything w/ v-cloak attribute. used by "view" js library -->
+
+        <link href="styles2.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Gelasio|Raleway:800,500&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+  <div class="topbar"></div>
+
+  <div class="gradient"></div>
+
+
+  <div id="news-template" v-cloak>
+
+  <!-- Main Story -->
+    
+
+    <header>
+
+    <div class="content">
+
+      <div class="title">{{ story.title }}</div>
+
+      <div class="subtitle">{{ story.subtitle }}</div>
+        <span class="date">{{ story.date }}</span>
+        <!-- {{ these are called tokens }} -->
+
+        <span v-for="tag in story.tags" class="tags"><a href="https://www.washingtonpost.com/">{{ tag }}</a></span>
+        <br><br>
+        <div class="caption">{{ story.image.caption }}
+             <!-- hierarchy abt what's in the token: story then img then caption -->
+            <a v-bind:href="story.source.url">{{ story.source.name }}</a>
+        </div>
+    </div>
+    </header>
+
+    <div class="content">
+
+        <div class="header"><img v-bind:src="story.image.url"></div>
+
+
+    <div class="bar"></div>
+
+    <article>
+
+      <div class="teaser"><span v-html="story.teaser"></span></div> 
+
+      <span v-html="story.content"></span>
+
+      <br>
+      <div class="bar"></div>
+
+    </article>
+    <!-- txt includes html markup of their own. putting v-html helps "view" render as such -->
+
+    
+
+
+    </div>
+    <footer>
+      <div class="content">
+        <span class="related_header">Related Stories</span>
+        <div class="related">
+          <ul>
+            <li v-for="relatedStory in relatedStories">
+              <div v-on:click="load(relatedStory)">
+              {{ relatedStory.title }}
+              <img v-bind:src="relatedStory.image.url">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </footer>
+
+          <!-- Useful debugging info, you can comment this section out when you don't need it. -->
+      <!-- <pre>The story object: {{ story | json }}</pre>
+        <pre>The relatedStories array: {{ relatedStories | json }}</pre> -->
+
+  </div>
+
+      <!-- Scripts here are what load the Vue library, and the actual story content. -->
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="https://abesiemsen.github.io/layout2020spring-resources/projects/news-story-template/data.js"></script>
+    </body>
+    </html>

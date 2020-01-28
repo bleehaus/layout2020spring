@@ -1,0 +1,16 @@
+{
+  "entrypoints": [
+    {
+      "name": "red",
+      "file": "index.html"
+    },
+    {
+      "name": "gradient",
+      "file": "index2.html"
+    },
+    {
+      "name": "grayscale",
+      "file": "index3.html"
+    }
+  ]
+}
