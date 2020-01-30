@@ -1,0 +1,277 @@
+
+
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	margin:0;
+	padding:0;
+}
+
+.topbar {
+	background-color:rgba(200, 0, 0, 1);
+	height:1em;
+	width:100%;
+	z-index:-1;
+	display:block;
+	position:fixed;
+	top:0;
+	right:0;
+}
+
+.header img {
+	width:100%;
+	height:calc(300px);
+	/*max-height:calc(300px);*/
+	position:fixed;
+	top:0;
+	left:0;
+	background-size:cover;
+	object-fit:cover;
+	object-position:center;
+	padding:0;
+	z-index:-10;
+}
+
+
+.title {
+	background-color:rgba(200, 0, 0, 1);
+	color:white;
+	font-size:1.6em;
+	margin-bottom:1.5em;
+	padding:20px;
+	font-family:'Raleway';
+}
+
+
+.content {
+	/*margin-top:calc(300px)*/;
+	margin: 2.5em;
+	margin:auto;
+	margin-top:11em;
+	max-width:70%;
+	font-family: 'Gelasio', sans-serif;
+	font-size:1.2em;
+	padding-bottom:20em;
+	background-color:white;
+	padding:2em;
+}
+
+/*a {
+	color:black;
+	text-decoration-style: underline;
+}*/
+
+@media (min-width: 1000px) { /*at least 640 px*/
+	
+
+	.content {
+		width:670px;
+		max-width:70%;
+		margin:9em 20% 5% 20% ;
+		/*margin:auto;*/
+	}
+}
+
+.subtitle {
+	padding-bottom:1em;
+	font-size:1.2em;
+	color: rgba(0, 0, 0, 1);
+}
+
+.date {
+	padding-bottom:1em;
+	font-family:'Gelasio', serif;
+	display:block;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.tags {
+	padding-bottom:2em;
+	text-align:right;
+	color:white;
+	padding: 0px 25px 0px 0px;
+/*	display:inline-block;
+	float:right;*/
+	display:inline-flex;
+}
+
+.tags a {
+	text-transform:uppercase;
+	text-decoration:none;
+	font-family:'Raleway';
+	padding: 5px 15px 5px 15px;
+/*	text-align:right;*/
+	color:rgba(0, 0, 0, 0.7);
+/*	outline-style:solid;
+	border: 0.1px solid black;*/
+	background-color:rgba(0, 0, 0, 0.1); /*red*/
+	transition-duration: 0.3s;
+}
+
+.tags a:hover {
+	color:white;
+	outline-style:none;
+	background-color:rgba(200, 0, 0, 1);
+}
+
+.caption {
+	font-family: 'Raleway', sans-serif;
+	font-size:0.9em;
+	color:rgba(200, 0, 0, 0.4);
+	padding-bottom:1em;
+}
+
+.caption a {
+	color:rgba(200, 0, 0, 1);
+	text-decoration:none;
+}
+
+.caption a:hover {
+	color:rgba(0, 0, 0, 1);
+	text-decoration:none;
+	transition-duration: 0.3s;
+}
+
+.teaser {
+	font-style:italic;
+}
+
+hr {
+	margin: 1em 0em 1em 0em;
+	color:rgba(0, 0, 0, 1);
+	border:2px solid rgba(200, 0, 0, 0.8);;
+}
+
+article {
+	line-height:1.7;
+	margin-bottom:4em;
+}
+
+article a {
+	color:rgba(200, 0, 0, 0.8);
+	/*padding: 2px 5px 2px 5px;
+	background-color:rgba(200, 0, 0, 0.8);*/
+	text-decoration:none;
+}
+
+article a:hover {
+	color:black;
+	transition-duration: 0.3s;
+}
+
+article li {
+	padding: 0.5em 0em;
+	list-style-position:outside;
+}
+
+
+.related {
+	font-family:'Raleway';
+	padding:2em 0em 2em 0em;
+	display:inline-block;
+}
+
+
+.related a:hover {
+	color:white;
+	background-color:rgba(200, 0, 0, 0.8);
+	transition-duration: 0.3s;
+}
+
+.related li {
+/*	width: 48%;*/
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap-reverse;
+	float:left;
+	/*padding:10px;*/
+	padding: 1.5em 0em;
+	font-weight:bold;
+}
+
+.related ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+.related img {
+	width:100%;
+	height:calc(150px);
+	display:block;
+	padding:1em 0em 2em 0em;
+	background-size:cover;
+	object-fit:cover;
+	object-position:center;
+	/*make div for img, use padding to size down
+	/*use object-fit:cover; to maintain aspect ratio (crops)*/
+}
+
+.related_header {
+	font-family:'Raleway';
+	text-transform:uppercase;
+	padding: 5px 15px 5px 15px;
+	color:white;
+	background-color:rgba(200, 0, 0, 0.9); /*red*/
+	transition-duration: 0.3s;
+}
+
+
+@media (min-width: 640px) { /*at least 640 px*/
+	.title {
+		font-size: 2.25em;
+	}
+
+	.date {
+		display:inline-block;
+		font-family:'Raleway';
+	}
+
+	.tags {
+		display:flex;
+		padding-bottom:1em;
+		text-align:right;
+		color:white;
+		padding: 0px 0px 0px 25px;
+		display:inline-block;
+		float:right;
+	}
+
+	.related li {
+		width:45%;
+		display:flex;
+		flex-direction:row;
+		flex-wrap:wrap;
+		float:left;
+		/*padding: 2.5%;*/
+		padding:0% 5% 0% 0%;
+		font-weight:bold;
+	}
+
+	.related img {
+		width:100%;
+		height:calc(150px);
+		display:block;
+		padding:0.5em 0em 2em 0em;
+	}
+
+
+/*	.related li:hover {
+		background-color:rgba(200, 0, 0, 0.8);
+		transition-duration: 0.3s;
+	}*/
+}
+
+
+
+
+/*title is 22pt until 640px, 36pt after*/
+
+
+
+p {
+	padding-top:1.5em;
+}
