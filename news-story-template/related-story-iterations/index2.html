@@ -72,8 +72,7 @@
     <footer>
       <div class="content">
         <span class="related_header">Related Stories</span>
-        <div class="related">
-          <ul>
+          <ul class="related">
             <li v-for="relatedStory in relatedStories">
               <div v-on:click="load(relatedStory)">
               <p>{{ relatedStory.title }}</p>
@@ -82,7 +81,6 @@
             </li>
           </ul>
         </div>
-      </div>
       </div>
     </footer>
 

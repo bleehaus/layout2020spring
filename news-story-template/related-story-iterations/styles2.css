@@ -246,6 +246,7 @@ article p {
 /* Handle */
 ::-webkit-scrollbar-thumb {
 	/*yellow*/
+	width:6px;
   	background:rgba(255,224,104,1);
   	background:rgba(0,0,0,1);
 }
@@ -258,7 +259,8 @@ article p {
 	display:flex;
 	flex-direction:row;
 	flex-wrap:nowrap;
-	overflow:scroll;
+	overflow:hidden;
+	overflow-x:scroll;
 	height:250px;
 }
 
@@ -270,8 +272,8 @@ article p {
 }
 
 .related li {
-/*	width: 48%;*/
-
+	min-width: 400px;
+	margin: 1em;
 	padding: 1em 0em;
 }
 
@@ -333,7 +335,7 @@ article p {
 
 	.related li {
 		display:inline-block;
-		width:45%;
+		width:300px;
 		/*display:flex;
 		flex-direction:row;
 		flex-wrap:nowrap;
@@ -342,9 +344,9 @@ article p {
 		padding:0% 0% 0% 0%;
 	}
 
-	.related li:nth-child(odd) {
+/*	.related li:nth-child(odd) {
 		padding:0% 8% 0% 0%;
-	}
+	}*/
 
 	.related img {
 		width:100%;
