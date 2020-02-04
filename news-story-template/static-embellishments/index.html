@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>News Story Template</title>
+  <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    	
+        <style>[v-cloak] { display: none; }</style>
+        <!-- v-cloak is a selector. hides everything w/ v-cloak attribute. used by "view" js library -->
+
+        <link href="styles.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto+Slab:400,600&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+  <div class="topbar"></div>
+
+  <div class="gradient"></div>
+
+
+  <div id="news-template" v-cloak>
+
+  <!-- Main Story -->
+    
+
+    <header>
+
+    <div class="content">
+
+      <div class="title">{{ story.title }}</div>
+
+      <div class="subtitle">{{ story.subtitle }}</div>
+        <span class="date">{{ story.date }}</span>
+        <!-- {{ these are called tokens }} -->
+        <br>
+        <span v-for="tag in story.tags" class="tags"><a href="https://www.washingtonpost.com/">{{ tag }}</a></span><br>
+        <div class="caption">{{ story.image.caption }}
+             <!-- hierarchy abt what's in the token: story then img then caption -->
+            
+
+            <p class="author">Written by <a href="story.source.url">Jane Doe</a> for 
+            <a class="source" v-bind:href="story.source.url">{{ story.source.name }}</a></p>
+        </div>
+        
+    </div>
+    </header>
+
+    <div class="content">
+
+        <div class="header"><img v-bind:src="story.image.url"></div>
+
+
+    <div class="bar"></div>
+
+    <article>
+
+      <div class="teaser"><span v-html="story.teaser"></span></div> 
+
+      <div class="pullquote">Interdum duis dictumst platea taciti sapien potenti, nullam suscipit dolor nisl himenaeos mauris, felis dictumst in aliquam primis curae ac ad sociosqu convallis dolor lacinia aenean tellus imperdiet sapien etiam.<div class="bar"></div></div>
+
+      <span v-html="story.content"></span>
+
+      <br>
+      <div class="bar"></div>
+
+       <div class="author">
+      <br>
+            <p>Follow
+              {{ story.image.caption }}
+             <!-- hierarchy abt what's in the token: story then img then caption -->
+            <a class="source" v-bind:href="story.source.url">{{ story.source.name }}</a>
+            on &nbsp;
+            <a href="https://twitter.com"><img src="https://www.iconsdb.com/icons/preview/black/twitter-xxl.png"></a>
+            &nbsp;
+            <a href="https://facebook.com"><img src="https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/facebook-icon-256.png"></a> 
+            &nbsp;
+            <a href="https://medium.com"><img src="https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/3377341091551941703-256.png"></a>
+
+      </div>
+      <br>
+      <div class="bar"></div>
+
+    </article>
+    <!-- txt includes html markup of their own. putting v-html helps "view" render as such -->
+
+    
+
+
+    </div>
+    <footer>
+      <div class="content">
+        <span class="related_header">Related Stories</span>
+          <ul class="related">
+              <li class="related_single" v-for="relatedStory in relatedStories">
+                <div v-on:click="load(relatedStory)">
+                <p>{{ relatedStory.title }}</p>
+                <img v-bind:src="relatedStory.image.url">
+                </div>
+              </li>
+          </ul>
+      </div>
+      </div>
+    </footer>
+
+          <!-- Useful debugging info, you can comment this section out when you don't need it. -->
+      <!-- <pre>The story object: {{ story | json }}</pre>
+        <pre>The relatedStories array: {{ relatedStories | json }}</pre> -->
+
+  </div>
+
+      <!-- Scripts here are what load the Vue library, and the actual story content. -->
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="https://abesiemsen.github.io/layout2020spring-resources/projects/news-story-template/data.js"></script>
+    </body>
+    </html>
