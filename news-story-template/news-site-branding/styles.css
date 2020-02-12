@@ -1,0 +1,16 @@
+body {
+	/*margin-top:calc(300px)*/;
+	margin: 1em 1em 1em 1em;
+	margin-top:0em;
+	max-width:85%;
+	font-size:1.2em;
+	padding-bottom:20em;
+	background-color:;
+	padding:2em;
+	font-family:'Roboto Slab';
+}
+
+
+img {
+	width: 60%;
+}
