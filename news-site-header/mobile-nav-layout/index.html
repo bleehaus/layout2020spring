@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>News Story Template</title>
+  <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    	
+        <style>[v-cloak] { display: none; }</style>
+        <!-- v-cloak is a selector. hides everything w/ v-cloak attribute. used by "view" js library -->
+
+        <link href="styles.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto+Slab:400,600&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+  <div class="topline"></div>
+
+  <div class="topbar">
+    <div class="content">
+      <div class="social">
+          <a class="signin" href="/signin">Sign in</a>
+          <!-- <div class="bar"></div> -->
+        </div>
+        <div class="nav">
+          <ul>
+            <li>Newsflash <img src="logo_b.png">
+              <div class="bar"></div>
+              <ul>
+                <li class="cat"><a href>Politics</a>
+                  <ul>
+                    <li class="pol">&#8594;Election</li>
+                    <li class="pol">&#8594;Local</li>
+                    <li class="pol">&#8594;National</li>
+                    <li class="pol">&#8594;Voting</li>
+                  </ul>
+                </li>
+                <li class="cat"><a href>Opinion</a>
+                  <ul>
+                    <li class="op">&#8594;From Newsflash</li>
+                    <li class="op">&#8594;The Weekly</li>
+                    <li class="op">&#8594;Modern Times</li>
+                  </ul>
+                </li>
+                <li class="cat"><a href>Science</a>
+                  <ul>
+                    <li class="sci">&#8594;Tech</li>
+                    <li class="sci">&#8594;Environment</li>
+                    <li class="sci">&#8594;Medicine</li>
+                    <li class="sci">&#8594;Space</li>
+                  </ul>
+                </li>
+                <li class="cat"><a href>Arts & Entertainment</a>
+                  <ul>
+                    <li class="ent">&#8594;Visual Culture</li>
+                    <li class="ent">&#8594;Performing Arts</li>
+                    <li class="ent">&#8594;Literature</li>
+                    <li class="ent">&#8594;Sports</li>
+                    <li class="ent">&#8594;Gaming</li>
+                    <li class="ent">&#8594;TV & Films</li>
+                    <li class="ent">&#8594;Music</li>
+                  </ul>
+                </li>
+                <li class="cat"><a href>Lifestyle</a>
+                  <ul>
+                    <li class="life">&#8594;Food</li>
+                    <li class="life">&#8594;Fashion</li>
+                    <li class="life">&#8594;Travel</li>
+                    <li class="life">&#8594;Home</li>
+                    <li class="life">&#8594;LGBTQIA*</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <br>
+        </div>
+    </div>
+  </div>
+
+  <div id="news-template" v-cloak>
+
+  <!-- Main Story -->
+    
+
+    <header>
+
+    <div class="content">
+
+      <div class="title">{{ story.title }}</div>
+
+      <div class="subtitle">{{ story.subtitle }}</div>
+       
+        <!-- {{ these are called tokens }} -->
+        
+        
+
+        <div class="caption">{{ story.image.caption }}
+            <p class="author">Written by <a href="story.source.url">Jane Doe</a> for 
+            <a class="source" v-bind:href="story.source.url">{{ story.source.name }}</a> on {{ story.date }}</p>
+        </div>
+
+        <br>
+
+        <span v-for="tag in story.tags" class="tags"><a href="https://www.washingtonpost.com/">{{ tag }}</a></span>
+        
+    </div>
+    </header>
+
+    <div class="content">
+
+        <div class="header"><img v-bind:src="story.image.url"></div>
+
+
+    <div class="bar"></div>
+
+    <article>
+
+      <div class="teaser"><span v-html="story.teaser"></span></div> 
+
+      
+
+      <span v-html="story.content"></span>
+        <div class="pullquote">Interdum duis dictumst platea taciti sapien potenti, nullam suscipit dolor nisl himenaeos mauris, felis dictumst in aliquam primis curae ac ad sociosqu convallis dolor lacinia aenean tellus imperdiet sapien etiam.<div class="bar"></div></div>
+      <span v-html="story.content"></span>
+
+      <br>
+      <div class="bar"></div>
+
+      <div class="author_footer">
+      <br>
+            <p>Follow
+              {{ story.image.caption }}
+             <!-- hierarchy abt what's in the token: story then img then caption -->
+            <a class="source" v-bind:href="story.source.url">{{ story.source.name }}</a>
+            on &nbsp;
+            <a href="https://twitter.com"><img src="https://www.iconsdb.com/icons/preview/black/twitter-xxl.png"></a>
+            &nbsp;
+            <a href="https://facebook.com"><img src="https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/facebook-icon-256.png"></a> 
+            &nbsp;
+            <a href="https://medium.com"><img src="https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/3377341091551941703-256.png"></a>
+
+            <br><br>
+
+            <div class="jane">
+              
+              <img src="https://vignette.wikia.nocookie.net/unidentified/images/0/0d/CCC.jpg/revision/latest/scale-to-width-down/200?cb=20151209010425">
+              <a href="story.source.url">Jane Doe</a> is a journalist with interests in politics, fashion, and how those two intersect. She lives in New York City with her two cats Linden and John.
+            </div>
+
+      </div>
+      <br><br>
+      <div class="bar"></div>
+
+    </article>
+    <!-- txt includes html markup of their own. putting v-html helps "view" render as such -->
+    </div>
+
+    <div class="content">
+       <span class="related_header">Recent Stories</span>
+        <ul class="related">
+            <li class="related_single" v-for="relatedStory in relatedStories">
+              <div v-on:click="load(relatedStory)">
+                
+              <img v-bind:src="relatedStory.image.url">
+              <p>{{ relatedStory.title }}</p>
+              </div>
+            </li>
+
+              <!-- <li class="related_single" v-for="topStory in topStories">
+                <div v-on:click="load(topStory)">
+                
+                <img v-bind:src="topStory.image.url">
+                <p>{{ topStory.title }}</p>
+                </div>
+              </li> -->
+        </ul>
+    </div>
+ </div>
+
+      
+
+          <!-- Useful debugging info, you can comment this section out when you don't need it. -->
+      <!-- <pre>The story object: {{ story | json }}</pre>
+        <pre>The relatedStories array: {{ relatedStories | json }}</pre> -->
+
+  
+
+      <!-- Scripts here are what load the Vue library, and the actual story content. -->
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="https://abesiemsen.github.io/layout2020spring-resources/projects/news-story-template/data.js"></script>
+
+
+  <div class="footer"><div class="content">
+        <p>Newsflash is a askdfjslkdjflkj</p>
+  </div></div>
+    </body>
+    </html>
