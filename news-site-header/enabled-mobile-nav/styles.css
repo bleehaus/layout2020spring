@@ -21,6 +21,31 @@ body {
 	transition-duration: 2s;
 }
 
+.menu {
+	position:fixed;
+	margin:-1em 1em;
+	z-index:30;
+	/*width:100%;*/
+}
+
+.menu img {
+	height:1em;
+	margin-top:0.5em;
+}
+
+.menu .nav {
+	font-size:1.1em;
+	margin: 1.4em 2.4em;
+	background-color:white;
+	width:100vh;
+	height:100vh;
+}
+
+.menu .nav a {
+	text-decoration:none;
+	color:black;
+}
+
 .topbar {
 	background-color:white;
 	color:black;
@@ -29,8 +54,12 @@ body {
 	position:fixed;
 	top:0;
 	left:0;
-	z-index:10;
+	z-index:9;
 	transition-duration: 0.3s;
+}
+
+.topbar li {
+	z-index:20;
 }
 
 .topbar:hover {
@@ -81,85 +110,58 @@ body {
 	width:100%;
 }
 
-.topbar .nav img {
+.topbar img {
 	height:0.9em;
 }
 
-.topbar .nav .logo_white {
+.topbar .logo_white {
 	display:none;
 }
 
-.topbar:hover .nav .logo_black {
+.topbar:hover .logo_black {
 	display:none;
 }
 
-.topbar:hover .nav .logo_white {
+.topbar:hover .logo_white {
 	display:inline-block;
 }
 
-.topbar .nav ul {
+.topbar li {
 	list-style-type:none;
 	margin:0;
 	padding:0;
 }
 
-.topbar .nav .cat {
-	display:none;
+.menu ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+.menu .cat {
 	font-family:'Noto Serif SC';
 	padding-top:10px;
 }
 
-.topbar:hover .nav .cat {
-	padding-right:3em;
-	display:block;
-}
-
-.topbar .nav .cat .pol {
+.menu .cat .pol {
 	padding-left:2em;
-	display:none;
 }
 
-.topbar .nav .cat:first-child:hover .pol {
-	display:block;
-}
-
-.topbar .nav .cat .op {
+.menu .cat .op {
 	padding-left:2em;
-	display:none;
 }
 
-.topbar .nav .cat:nth-child(2):hover .op {
-	display:block;
-}
-
-.topbar .nav .cat .sci {
+.menu .cat .sci {
 	padding-left:2em;
-	display:none;
 }
 
-.topbar .nav .cat:nth-child(3):hover .sci {
-	display:block;
-}
-
-.topbar .nav .cat .ent {
+.menu .cat .ent {
 	padding-left:2em;
-	display:none;
 }
 
-.topbar .nav .cat:nth-child(4):hover .ent {
-	display:block;
-}
-
-.topbar .nav .cat .life {
+.menu .cat .life {
 	padding-left:2em;
-	display:none;
 }
-
-.topbar .nav .cat:nth-child(5):hover .life {
-	display:block;
-}
-
-
 
 .topbar .social {
 	display:inline-block;
