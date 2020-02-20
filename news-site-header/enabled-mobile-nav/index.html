@@ -11,9 +11,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto+Slab:400,600&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <!-- <script src="https://abesiemsen.github.io/layout2020spring-resources/projects/news-story-template/data.js"></script> -->
-  <!-- <script src="script.js"></script> -->
+  
 
   <!-- icomoon.io: can upload .svgs font as custom icons --> 
 
@@ -24,62 +22,37 @@
 
   <div class="topline"></div>
 
-  <div class="menu">
-    <div v-on:click="toggleOpen()"><img src="hamburger.png"></div>
+  <div class="topbar">
+    <div class="menu">
+    <div v-on:click="toggleOpen()"><img class="hamburger_b" src="hamburger.png"><img class="hamburger_w" src="hamburger_white.png"></div>
     <div v-show="menuIsOpen">
       <ul class="nav">
-        <li class="cat"><div v-on:click="toggleOpen()">Politics</div>
-          <div v-show="menuIsOpen">
-          <ul>
-            <li class="pol">&#8212;Election</li>
-            <li class="pol">&#8212;Local</li>
-            <li class="pol">&#8212;National</li>
-            <li class="pol">&#8212;Voting</li>
-          </ul>
-          </div>
+        <br>
+        <div class="bar"></div>
+        <li class="cat expandable"><a href="#">Politics</a>
+          <ul><li class="pol"><a href="#">Election</a></li><li class="pol"><a href="#">Local</a></li><li class="pol"><a href="#">National</a></li><li class="pol"><a href="#">Voting</a></li></ul>
         </li>
-        <li class="cat">Opinion</a>
-          <ul>
-            <li class="op">&#8212;From Newsflash</li>
-            <li class="op">&#8212;The Weekly</li>
-            <li class="op">&#8212;Box Office</li>
-          </ul>
+        <div class="bar"></div>
+        <li class="cat expandable"><a href="#">Opinion</a>
+          <ul><li class="op"><a href="#">From Newsflash</a></li><li class="op"><a href="#">The Weekly</li><li class="op"><a href="#">Box Office</a></li></ul>
         </li>
-        <li class="cat"><a href>Science</a>
-          <ul>
-            <li class="sci">&#8212;Tech</li>
-            <li class="sci">&#8212;Environment</li>
-            <li class="sci">&#8212;Medicine</li>
-            <li class="sci">&#8212;Space</li>
-          </ul>
+        <div class="bar"></div>
+        <li class="cat expandable"><a href="#">Science</a>
+          <ul><li class="sci">Tech</li><li class="sci">Environment</li><li class="sci">Medicine</li><li class="sci">Space</li></ul>
         </li>
-        <li class="cat"><a href>Arts & Entertainment</a>
-          <ul>
-            <li class="ent">&#8212;Visual Culture</li>
-            <li class="ent">&#8212;Performing Arts</li>
-            <li class="ent">&#8212;Literature</li>
-            <li class="ent">&#8212;Sports</li>
-            <li class="ent">&#8212;Gaming</li>
-            <li class="ent">&#8212;TV & Films</li>
-            <li class="ent">&#8212;Music</li>
-          </ul>
+        <div class="bar"></div>
+        <li class="cat expandable"><a href>Arts & Entertainment</a>
+          <ul><li class="ent">Visual Culture</li><li class="ent">Performing Arts</li><li class="ent">Literature</li><li class="ent">Sports</li><li class="ent">Gaming</li><li class="ent">TV & Films</li><li class="ent">Music</li></ul>
         </li>
-        <li class="cat"><a href>Lifestyle</a>
-          <ul>
-            <li class="life">&#8212;Food</li>
-            <li class="life">&#8212;Fashion</li>
-            <li class="life">&#8212;Travel</li>
-            <li class="life">&#8212;Home</li>
-            <li class="life">&#8212;LGBTQIA*</li>
-          </ul>
+        <div class="bar"></div>
+        <li class="cat expandable"><a href>Lifestyle</a>
+          <ul><li class="life">Food</li><li class="life">Fashion</li><li class="life">Travel</li><li class="life">Home</li><li class="life">LGBTQIA*</li></ul>
         </li>
+        <div class="bar"></div>
       </ul>
       <br>
     </div>
   </div>
-  
-
-  <div class="topbar">
   <div class="content">
     <li>Newsflash <img class="logo_black" src="logo_b.png"><img class="logo_white" src="logo_w.png">
     <div class="social">
@@ -89,23 +62,7 @@
   </div>
   </div>
 
-
-
-  <script>
-      new Vue({
-        el: '.menu',
-        data: {
-          menuIsOpen: false
-        },
-        methods: {
-          toggleOpen: function() {
-            this.menuIsOpen = !this.menuIsOpen
-          }
-        }
-      })
-  </script>
-
-</div>
+<!-- </div> -->
 
 
 
@@ -209,21 +166,19 @@
           </div>
         </div>
 
+       
+        <div class="footer"><div class="content">
+          <p>Newsflash is a askdfjslkdjflkj</p>
+        </div></div>
 
 
-        <!-- Useful debugging info, you can comment this section out when you don't need it. -->
-      <!-- <pre>The story object: {{ story | json }}</pre>
-        <pre>The relatedStories array: {{ relatedStories | json }}</pre> -->
-
-
+        <!-- page renders w/o waiting for javascript -->
 
         <!-- Scripts here are what load the Vue library, and the actual story content. -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://abesiemsen.github.io/layout2020spring-resources/projects/news-story-template/data.js"></script>
 
+        <script src="script.js"></script>
 
-        <div class="footer"><div class="content">
-          <p>Newsflash is a askdfjslkdjflkj</p>
-        </div></div>
       </body>
       </html>

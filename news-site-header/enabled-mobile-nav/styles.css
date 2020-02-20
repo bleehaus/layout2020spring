@@ -35,15 +35,23 @@ body {
 
 .menu .nav {
 	font-size:1.1em;
-	margin: 1.4em 2.4em;
+	margin: 0em;
 	background-color:white;
-	width:100vh;
+	width:100vw;
 	height:100vh;
 }
 
 .menu .nav a {
 	text-decoration:none;
 	color:black;
+}
+
+.expandable > ul {
+      display:none;
+}
+
+.expandable.expanded > ul {
+      display:block;
 }
 
 .topbar {
@@ -66,6 +74,8 @@ body {
 	color:white;
 	background-color:black;
 }
+
+
 
 .topbar a {
 	text-decoration:none;
@@ -98,23 +108,27 @@ body {
 	font-weight:italic;
 }
 
-.topbar .bar {
+/*.topbar .bar {
 	background-color:white;
 	display:none;
 	transition-duration:0.5s;
-}
+}*/
 
-.topbar:hover .bar {
+/*.topbar:hover .bar {
 	height:2px;
 	display:block;
 	width:100%;
-}
+}*/
 
 .topbar img {
 	height:0.9em;
 }
 
 .topbar .logo_white {
+	display:none;
+}
+
+.topbar .hamburger_w {
 	display:none;
 }
 
@@ -126,10 +140,28 @@ body {
 	display:inline-block;
 }
 
+.topbar:hover .hamburger_w {
+	display:inline-block;
+}
+
+.topbar:hover .hamburger_b {
+	display:none;
+}
+
 .topbar li {
 	list-style-type:none;
 	margin:0;
 	padding:0;
+}
+
+.menu {
+	margin: 1.5em 1em;
+}
+
+.menu .nav {
+	z-index:0;
+	margin: 1.4em 2em;
+	padding:0em;
 }
 
 .menu ul {
@@ -139,28 +171,55 @@ body {
 }
 
 .menu .cat {
-	font-family:'Noto Serif SC';
-	padding-top:10px;
+	font-size:1.15em;
+	font-family:'Roboto Slab';
+	/*padding-top:1em;*/
+}
+
+.menu .expanded {
+	font-weight:bold;
+}
+
+.menu .bar {
+	height:2px;
+	width:80%;
+	padding-right:3em;
+	margin: 2em 0;
+	background-color:black;
+}
+
+.menu .bar:first-child {
+	margin:0em 0em;
 }
 
 .menu .cat .pol {
 	padding-left:2em;
+	padding-top:0.25em;
+	font-family:'Noto Serif SC';
 }
 
 .menu .cat .op {
 	padding-left:2em;
+	padding-top:0.25em;
+	font-family:'Noto Serif SC';
 }
 
 .menu .cat .sci {
 	padding-left:2em;
+	padding-top:0.25em;
+	font-family:'Noto Serif SC';
 }
 
 .menu .cat .ent {
 	padding-left:2em;
+	padding-top:0.25em;
+	font-family:'Noto Serif SC';
 }
 
 .menu .cat .life {
 	padding-left:2em;
+	padding-top:0.25em;
+	font-family:'Noto Serif SC';
 }
 
 .topbar .social {
@@ -236,10 +295,6 @@ footer .content {
 	position:static;
 	bottom:0;
 	left:0;
-}
-
-.footer .content {
-	background-color:orange;
 }
 
 /*a {

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Story Template</title>
+    <style>[v-cloak] { display: none; } img {max-width: 100%;}</style>
+
+  </head>
+
+  <style>
+    .menu-container {
+      width: 300px;
+      height: 100vh;
+      overflow-y: auto;
+      background-color: #ccc;
+      position: fixed;
+      right:0;
+      top: 0;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+      transform: translateX(20px);
+    }
+
+    .menu-container.menu-is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    .expandable > ul {
+      display:none;
+      background-color:red;
+    }
+
+    .expandable.expanded > ul {
+      display:block;
+    }
+
+  </style>
+  <body>
+
+    <!-- Site Header -->
+    <header id="news-site-header">
+      <div><button v-on:click="toggleTheHamburgerMenu()">hamburger</button></div>
+      <div class="menu-container" v-bind:class="{ 'menu-is-open': menuIsOpen }">
+        <nav>
+          <ul>
+            <li class="expandable">
+              <a href="#">News</a>
+              <ul>
+                <li>
+                  <a href="#">Headlines</a>
+                </li>
+                <li>
+                  <a href="#">Politics</a>
+                </li>
+                <li>
+                  <a href="#">Science</a>
+                </li>
+                <li>
+                  <a href="#">Entertainment</a>
+                </li>
+              </ul>
+            </li>
+            <li class="expandable">
+              <a href="#">Opinion</a>
+              <ul>
+                <li>
+                  <a href="#">Columns</a>
+                </li>
+                <li>
+                  <a href="#">Letters</a>
+                </li>
+              </ul>
+            </li>
+            <li class="expandable">
+              <a href="#">Sports</a>
+              <ul>
+                <li>
+                  <a href="#">Baseball</a>
+                </li>
+                <li>
+                  <a href="#">Football</a>
+                </li>
+                <li>
+                  <a href="#">Basketball</a>
+                </li>
+                <li>
+                  <a href="#">Hockey</a>
+                </li>
+                <li>
+                  <a href="#">Soccer</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <div id="news-template" v-cloak>
+
+
+      <!-- Top 3 stories-->
+      <h2>Top Stories</h2>
+      <ul>
+        <li v-for="topStory in topStories(3)">
+          <div v-on:click="load(topStory)">
+            {{ topStory.title }}
+            <img v-bind:src="topStory.image.url">
+          </div>
+        </li>
+      </ul>
+
+    
+
+      <!-- Useful debugging info, you can comment this section out when you don't need it. -->
+      <!-- <pre>The story object: {{ story | json }}</pre> -->
+      <!-- <pre>The relatedStories array: {{ relatedStories | json }}</pre> -->
+      <!-- <pre>The topStories array: {{ topStories(2) | json }}</pre> -->
+      <!-- <pre>The storiesWithSameTag array: {{ storiesWithSameTag | json }}</pre> -->
+
+    </div>
+
+    <!-- Scripts here are what load the Vue library, and the actual story content. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://abesiemsen.github.io/layout2020spring-resources/projects/news-story-template/data.js"></script>
+    
+    <!-- Script that adds Vue capability to #news-site-header (This can, and should, really be in your own .js file) -->
+    <script>
+      new Vue({
+        el: '#news-site-header',
+        data: {
+          menuIsOpen: false
+        },
+        methods: {
+          toggleTheHamburgerMenu: function() {
+            this.menuIsOpen = !this.menuIsOpen
+          }
+        }
+      })
+    </script>
+
+    <!-- Script that adds 'expandable' capability for sub-menus. -->
+    <script>
+      
+      var expandables = document.getElementsByClassName('expandable');
+      
+      for (let expandable of expandables) {
+        let triggerElement = expandable.querySelector('a');
+        triggerElement.addEventListener('click', function(event) {
+          event.preventDefault();
+          closeAllExcept(expandable);
+          expandable.classList.toggle('expanded');
+        })
+      }
+
+      function closeAllExcept(clickedExpandable) {
+        for (let expandable of expandables) {
+          if (expandable !== clickedExpandable) {
+            expandable.classList.remove('expanded')
+          }
+        }
+      }
+
+    </script>
+    
+  </body>
+</html>
