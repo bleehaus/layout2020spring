@@ -162,6 +162,7 @@ body {
 	z-index:0;
 	margin: 1.4em 2em;
 	padding:0em;
+	overflow-y:scroll;
 }
 
 .menu ul {
