@@ -1,8 +1,9 @@
 
-   //Script that adds Vue capability to #news-site-header (This can, and should, really be in your own .js file) -->
+   //Script that adds Vue capability to #news-site-header 
+   //(This can, and should, really be in your own .js file) -->
 
       new Vue({
-        el: '.menu',
+        el: '#menu_container',
         data: {
           menuIsOpen: false
         },

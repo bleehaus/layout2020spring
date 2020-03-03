@@ -22,76 +22,44 @@
 
   <div class="topline"></div>
 
-  <div class="topbar">
-    <div class="menu_mobile">
-    <div v-on:click="toggleOpen()"><img class="hamburger_b" src="hamburger.png"><img class="hamburger_w" src="hamburger_white.png"></div>
-    <div v-show="menuIsOpen">
-      <ul class="nav"><br>
-        <li class="cat expandable"><a href="#">Politics</a><span class="plus">+</span><ul><li class="pol"><a href="#">Election</a></li><li class="pol"><a href="#">Local</a></li><li class="pol"><a href="#">National</a></li><li class="pol"><a href="#">Voting</a></li></ul>
-        </li>
-        <li class="cat expandable"><a href="#">Opinion</a>
-          <ul><li class="op"><a href="#">From Newsflash</a></li><li class="op"><a href="#">The Weekly</li><li class="op"><a href="#">Box Office</a></li></ul>
-        </li>
-        <li class="cat expandable"><a href="#">Science</a>
-          <ul><li class="sci"><a href="#">Tech</a></li><li class="sci"><a href="#">Environment</a></li><li class="sci"><a href="#">Medicine</a></li><li class="sci"><a href="#">Space</a></li></ul>
-        </li>
-        <li class="cat expandable"><a href>Arts & Entertainment</a>
-          <ul><li class="ent"><a href="#">Visual Culture</a></li><li class="ent"><a href="#">Performing Arts</a></li><li class="ent"><a href="#">Literature</a></li><li class="ent"><a href="#">Sports</a></li><li class="ent"><a href="#">Gaming</a></li><li class="ent"><a href="#">TV & Films</a></li><li class="ent"><a href="#">Music</a></li></ul>
-        </li>
-        <li class="cat expandable"><a href>Lifestyle</a>
-          <ul><li class="life">Food</li><li class="life"><a href="#">Fashion</a></li><li class="life"><a href="#">Travel</a></li><li class="life"><a href="#">Home</a></li><li class="life"><a href="#">LGBTQIA*</a></li></ul>
-        </li>
-      </ul>
-      <br>
-    </div>
-  </div>
-    <div class="content">
-    <li>Newsflash <img class="logo_black" src="logo_b.png"><img class="logo_white" src="logo_w.png">
-    <div class="social">
-      <a class="signin" href="/signin">Sign up</a>
-      <!-- <div class="bar"></div> -->
-    </div>
-  </div>
-  </div>
-  </div>
+  <header id ="menu_container" class="topbar">
+    
 
-  <div class="topbar">
-  <div class="menu_desktop">
-    <div v-on:click="toggleOpen()">
-    <div v-show="menuIsOpen">
-      <ul class="nav">
-        <br>
-        <li class="cat expandable"><a href="#">Politics</a>
-          <ul><li class="pol"><a href="#">Election</a></li><li class="pol"><a href="#">Local</a></li><li class="pol"><a href="#">National</a></li><li class="pol"><a href="#">Voting</a></li></ul>
-        </li>
-        <li class="cat expandable"><a href="#">Opinion</a>
-          <ul><li class="op"><a href="#">From Newsflash</a></li><li class="op"><a href="#">The Weekly</li><li class="op"><a href="#">Box Office</a></li></ul>
-        </li>
-        <li class="cat expandable"><a href="#">Science</a>
-          <ul><li class="sci"><a href="#">Tech</a></li><li class="sci"><a href="#">Environment</a></li><li class="sci"><a href="#">Medicine</a></li><li class="sci"><a href="#">Space</a></li></ul>
-        </li>
-        <li class="cat expandable"><a href>Arts & Entertainment</a>
-          <ul><li class="ent"><a href="#">Visual Culture</a></li><li class="ent"><a href="#">Performing Arts</a></li><li class="ent"><a href="#">Literature</a></li><li class="ent"><a href="#">Sports</a></li><li class="ent"><a href="#">Gaming</a></li><li class="ent"><a href="#">TV & Films</a></li><li class="ent"><a href="#">Music</a></li></ul>
-        </li>
-        <li class="cat expandable"><a href>Lifestyle</a>
-          <ul><li class="life">Food</li><li class="life"><a href="#">Fashion</a></li><li class="life"><a href="#">Travel</a></li><li class="life"><a href="#">Home</a></li><li class="life"><a href="#">LGBTQIA*</a></li></ul>
-        </li>
+      <div v-on:click="toggleOpen()"><img class="hamburger_b" src="hamburger.png"><img class="hamburger_w" src="hamburger_white.png"></div>
+
+    
+    <div class="content">
+      <li><a href="#" class="newsflash">Newsflash</a> <img class="logo_black" src="logo_b.png"><img class="logo_white" src="logo_w.png">
+        <div class="social">
+          <a class="signin" href="#">Sign up</a>
+          <!-- <div class="bar"></div> -->
+        </div>
+      </li>
+
+      <div class="menu" v-bind:class="{'menu_is_open': menuIsOpen}">
+      <!-- <div v-bind:class="{'menu_is_open':menuIsOpen}"> -->
+        <!--  adds menu_is_open class. can make when class exists visible, when not, invisible -->
+        <ul class="nav">
+          <li class="cat expandable"><a href="#">Politics</a>
+            <ul><li class="open"><a href="#">Election</a></li><li class="open"><a href="#">Local</a></li><li class="open"><a href="#">National</a></li><li class="open"><a href="#">Voting</a></li></ul>
+          </li>
+          <li class="cat expandable"><a href="#">Opinion</a>
+            <ul><li class="open"><a href="#">From Newsflash</a></li><li class="open"><a href="#">The Weekly</li><li class="open"><a href="#">Box Office</a></li></ul>
+          </li>
+          <li class="cat expandable"><a href="#">Science</a>
+            <ul><li class="open"><a href="#">Tech</a></li><li class="open"><a href="#">Environment</a></li><li class="open"><a href="#">Medicine</a></li><li class="open"><a href="#">Space</a></li></ul>
+          </li>
+          <li class="cat expandable"><a href>Arts & Entertainment</a>
+            <ul><li class="open"><a href="#">Visual Culture</a></li><li class="open"><a href="#">Performing Arts</a></li><li class="open"><a href="#">Literature</a></li><li class="open"><a href="#">Sports</a></li><li class="open"><a href="#">Gaming</a></li><li class="open"><a href="#">TV & Films</a></li><li class="open"><a href="#">Music</a></li></ul>
+          </li>
+          <li class="cat expandable"><a href>Lifestyle</a>
+            <ul><li class="open"><a href="#">Food</li><li class="open"><a href="#">Fashion</a></li><li class="open"><a href="#">Travel</a></li><li class="open"><a href="#">Home</a></li><li class="open"><a href="#">LGBTQIA*</a></li></ul>
+          </li>
         </ul>
-      <br>
+      </div>
     </div>
-    </div>
-  </div>
-    <div class="content">
-    <li>Newsflash <img class="logo_black" src="logo_b.png"><img class="logo_white" src="logo_w.png">
-    <div class="social">
-      <a class="signin" href="/signin">Sign up</a>
-      <!-- <div class="bar"></div> -->
-    </div>
-  </div>
-  </div>
-  </div>
 
-
+  </header>
 
 <!-- </div> -->
 
@@ -195,12 +163,14 @@
               </li> -->
             </ul>
           </div>
-        </div>
+  </div>
 
        
-        <div class="footer"><div class="content">
-          <p>Newsflash is a askdfjslkdjflkj</p>
-        </div></div>
+        <footer>
+          <div class="content">
+            <p>Newsflash is a askdfjslkdjflkj</p>
+          </div>
+        </footer>
 
 
         <!-- page renders w/o waiting for javascript -->

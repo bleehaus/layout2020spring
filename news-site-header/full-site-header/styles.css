@@ -1,15 +1,3 @@
-/*TODO
--have hover state on topbar only available in media query at large sizes
--don't hide "sign in" button: mayb have it at low opacity, make smaller
--sign in vs sign up? 
--get rid of bars separating menu_mobile items
--how to show that it's an expandable item: dropdown arrow
--don't know if bolding is necessary to differentiate btw items and subitems
--indentation of subitems feels excessive, can cut in half
--or maybe expanded item gets thin bars around it
--next class: work on desktop nav/masthead
-
-*/
 
 * {
 	margin:0;
@@ -33,12 +21,177 @@ body {
 	transition-duration: 2s;
 }
 
+/*MOBILE MENU ONLY*/
+
+@media (max-width: 640px) {
+
+	.topbar .content {
+		margin-top:-0.5em;
+		margin-bottom:-0.5em;
+		font-family:'Roboto Slab';
+	}
+
+	.menu {
+		position:fixed;
+		z-index:30;
+		opacity:0;
+		visibility:hidden;
+		transform: translateX(50px);
+		color:black;
+	}
+
+	.menu img {
+		height:1em;
+		margin-top:0.5em;
+	}
+
+	.menu .nav {
+		font-size:1.1em;
+		margin: 0em;
+		background-color:white;
+		color:black;
+		width:100vw;
+		height:100vh;
+	}
+
+	.menu .expandable {
+		color:black;
+		margin:1em 0em;
+		margin-bottom:3em;
+	}
+
+	.menu .expandable:first-child {
+		padding-top:3em;
+	}
+
+	.menu .nav a {
+		text-decoration:none;
+		color:black;
+	}
+
+	.menu li .open {
+		margin:0.2em 0em;
+	}
+
+	.menu.menu_is_open {
+		opacity:1;
+		color:black;
+		visibility:visible;
+		transform: translateX(0);
+	}
+
+	.hamburger_b {
+		position:absolute;
+		isibility:visible;
+		display:inline;
+		margin: 2.2em 1.5em;
+	}
+
+	.hamburger_w {
+		position:absolute;
+		isibility:visible;
+		display:inline;
+		margin: 2.2em 1.5em;
+	}
+
+	.topbar .hamburger_w {
+		visibility:hidden;
+	}
+
+	.topbar:hover .hamburger_w {
+		visibility:visible;
+	}
+
+	.topbar:hover .hamburger_b {
+		visibility:hidden;
+	}
+
+}
+
+/*DESKTOP MENU ONLY*/
+
+@media (min-width: 641px) {
+
+	#news-template {
+		margin-top:5em;
+	}
+
+	.topbar:hover a {
+		color:white;
+		transition-duration:0.3s;
+	}
+
+	.topbar .content {
+		margin-top:-1em;
+		margin-bottom:-2em;
+		font-family:'Roboto Slab';
+	}
+
+	.topbar a {
+		color:black;
+		transition-duration:0.3s;
+	}
+
+	.hamburger_b {
+		visibility:hidden;
+	}
+
+	.hamburger_w {
+		visibility:hidden;
+	}
+
+	.menu {
+		padding:0;
+		transition-duration:0.3s;
+	}
+
+	.nav {
+		display:flex;
+		color:black;
+		justify-content:space-between;
+	}
+
+	.nav a {
+		padding: 0em 0.5em;
+		box-sizing:border-box;
+	}
+
+	li {
+		transition-duration:0.3s;
+		display: block;
+		color:black;
+		background-color:white;
+	}
+
+	.topbar:hover li {
+		color:white;
+		background-color:black;
+		transition-duration:0.3s;
+	}
+
+	li .open:hover {
+		background-color:white;
+	}
+
+	li .open:hover a {
+		color:black;
+	}
+
+	.expandable > ul {
+		transition-duration:0.3s;
+		position:absolute;
+		top:100%; /*puts at top of parent bottom*/
+	}
+}
+
 .expandable > ul {
       display:none;
+      visibility:hidden;
 }
 
 .expandable.expanded > ul {
       display:block;
+      visibility:visible;
 }
 
 .topbar {
@@ -64,61 +217,85 @@ body {
 
 .topbar a {
 	text-decoration:none;
-	color:black;
-	opacity:0.3;
 }
 
-.topbar:hover a {
+.topbar .signin {
+	color:black;
+	opacity:0.5;
+	padding:5px 10px;
+	box-sizing:border-box;
+	transition-duration: 0.3s;
+}
+
+.topbar:hover .signin {
 	color:white;
 	opacity:1;
 }
 
-.topbar .content {
-	margin-top:-0.7em;
-	margin-bottom:-0.7em;
-	font-family:'Roboto Slab';
-	/*color:white;*/
-}
-
-.topbar .nav {
-	display:inline-block;
-	text-align:;
-	text-transform:;
-	font-weight:italic;
+.topbar .signin:hover {
+	color:black;
+	background-color:white;
+	padding:5px 10px;
+	box-sizing:border-box;
 }
 
 .topbar img {
 	height:0.9em;
 }
 
+.newsflash {
+	color:black;
+}
+
+.topbar:hover .newsflash {
+	color:white;
+}
+
 .topbar .logo_white {
 	display:none;
 }
-
-.topbar .hamburger_w {
-	display:none;
-}
-
 .topbar:hover .logo_black {
 	display:none;
 }
 
 .topbar:hover .logo_white {
 	display:inline-block;
-}
-
-.topbar:hover .hamburger_w {
-	display:inline-block;
-}
-
-.topbar:hover .hamburger_b {
-	display:none;
+	/*margin: 2em;*/
 }
 
 .topbar li {
 	list-style-type:none;
 	margin:0;
 	padding:0;
+}
+
+
+.menu .nav {
+	z-index:0;
+	margin:1.5em 0em;
+	padding:0em;
+	/*overflow-y:scroll;*/
+}
+
+.menu ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+.menu .cat {
+	font-size:0.8em;
+	font-family:'Roboto Slab';
+	/*padding-top:1em;*/
+}
+
+.menu .bar:first-child {
+	margin:0em 0em;
+}
+
+.menu .cat .open {
+	padding:0.5em 0em;
+	font-family:'Noto Serif SC';
 }
 
 .topbar .social {
@@ -130,24 +307,6 @@ body {
 	width:20px;
 }
 
-.menu_mobile {
-	display:none;
-}
-
-.menu_desktop {
-	font-family:'Roboto Slab';
-	font-size:1em;
-	display:inline-flex;
-}
-
-.menu_desktop li {
-	display:inline;
-	margin: 0em 2em;
-}
-
-/*.menu_desktop .pol ul {
-	display:block;
-}*/
 
 .header img {
 	width:100%;
@@ -185,9 +344,6 @@ header {
 	margin-bottom:0em;
 }
 
-footer .content {
-	background-color:none;
-}
 
 .content {
 	/*margin-top:calc(300px)*/;
@@ -205,116 +361,16 @@ footer .content {
 	line-height:1.6;
 }
 
-.footer {
-	margin:0;
-	padding:0;
-	background-color:;
-	position:static;
+footer .content {
+	background-color:orange;
+/*	position:static;*/
 	bottom:0;
-	left:0;
 }
 
-@media (max-width:640px) {
-
-	.menu_desktop {
-		display:none;
-	}
-
-	.menu_mobile {
-		display:inline-block;
-		margin: 1.5em 1em;
-		position:fixed;
-		z-index:30;
-		/*width:100%;*/
-	}
-
-	.menu_mobile img {
-		height:1em;
-		margin-top:0.5em;
-	}
-
-	.menu_mobile .nav {
-		font-size:1.1em;
-		margin: 0em;
-		background-color:white;
-		width:100vw;
-		height:100vh;
-	}
-
-	.menu_mobile .nav a {
-		text-decoration:none;
-		color:black;
-	}
-
-	.menu_mobile .nav {
-		z-index:0;
-		margin: 1.4em 2em;
-		padding:0em;
-		overflow-y:scroll;
-	}
-
-	.menu_mobile ul {
-		list-style-type:none;
-		margin:0;
-		background-color:red;
-	}
-
-	.menu_mobile li {
-		padding: 1em 0em;
-	}
-
-	.menu_mobile .cat {
-		font-size:1.15em;
-		font-family:'Roboto Slab';
-		/*padding-top:1em;*/
-	}
-
-	.menu_mobile .expanded {
-		font-weight:bold;
-	}
-
-	.menu_mobile .bar {
-		height:2px;
-		width:80%;
-		padding-right:3em;
-		margin: 2em 0;
-		background-color:black;
-	}
-
-	.menu_mobile .bar:first-child {
-		margin:0em 0em;
-	}
-
-	.menu_mobile .cat .pol {
-		padding-left:2em;
-		padding-top:0.25em;
-		font-family:'Noto Serif SC';
-	}
-
-	.menu_mobile .cat .op {
-		padding-left:2em;
-		padding-top:0.25em;
-		font-family:'Noto Serif SC';
-	}
-
-	.menu_mobile .cat .sci {
-		padding-left:2em;
-		padding-top:0.25em;
-		font-family:'Noto Serif SC';
-	}
-
-	.menu_mobile .cat .ent {
-		padding-left:2em;
-		padding-top:0.25em;
-		font-family:'Noto Serif SC';
-	}
-
-	.menu_mobile .cat .life {
-		padding-left:2em;
-		padding-top:0.25em;
-		font-family:'Noto Serif SC';
-	}
-}
+/*a {
+	color:black;
+	text-decoration-style: underline;
+}*/
 
 @media (min-width: 1000px) { /*at least 1000 px*/
 	.content {
@@ -362,7 +418,7 @@ footer .content {
 	flex-flow: row wrap;
 	flex-direction:row;
 	flex-wrap:wrap;
-	justify-content: flex-start;
+	justify-content: space-between;
 }
 
 .tags a {
@@ -624,18 +680,6 @@ article p {
 		bottom:0;
 		/*padding:0.5em 0em 2em 0em;*/
 	}
-
-
-/*	.related li:hover {
-		background-color:rgba(200, 0, 0, 0.8);
-		transition-duration: 0.3s;
-	}*/
-}
-
-
-
-
-/*title is 22pt until 640px, 36pt after*/
 
 
 
