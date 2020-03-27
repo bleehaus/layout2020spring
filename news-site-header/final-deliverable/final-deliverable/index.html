@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>News Story Template</title>
+  <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>[v-cloak] { display: none; }</style>
+
+  <link href="styles.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto+Slab:400,600&display=swap" rel="stylesheet">
+
+  
+
+  <!-- icomoon.io: can upload .svgs font as custom icons --> 
+
+</head>
+
+
+<body>
+
+  <div class="topline"></div>
+
+  <header id ="menu_container" class="topbar">
+    
+
+      <div v-on:click="toggleOpen()"><img class="hamburger_b" src="hamburger.png"><img class="hamburger_w" src="hamburger_white.png"></div>
+
+    
+    <div class="content">
+      <li class="newsflash"><a href="" class="masthead">Newsflash <img class="logo_black" src="logo_b.png"><img class="logo_white" src="logo_w.png"></a>
+        <div class="social">
+          <a class="signin" href="#">Sign up</a>
+          <!-- <div class="bar"></div> -->
+        </div>
+      </li>
+
+      <div class="space"></div>
+
+      <div class="menu" v-bind:class="{'menu_is_open': menuIsOpen}">
+      <!-- <div v-bind:class="{'menu_is_open':menuIsOpen}"> -->
+        <!--  adds menu_is_open class. can make when class exists visible, when not, invisible -->
+        <ul class="nav">
+          <li class="cat expandable"><a href="#">Politics</a>
+            <ul><li class="open"><a href="#">2020 Election</a></li><li class="open"><a href="#">Voting</a></li><li class="open"><a href="#">Local</a></li><li class="open"><a href="#">National</a></li><li class="open"><a href="#">International</a></li></ul>
+          </li>
+          <li class="cat expandable"><a href="#">Opinion</a>
+            <ul><li class="open"><a href="#">From Newsflash</a></li><li class="open"><a href="#">The Weekly</li><li class="open"><a href="#">Box Office</a></li><li class="open"><a href="#">Book Club</a></li><li class="open"><a href="#">Jukebox</a></li></ul>
+          </li>
+          <li class="cat expandable"><a href="#">Science</a>
+            <ul><li class="open"><a href="#">COVID-19</a></li><li class="open"><a href="#">Tech</a></li><li class="open"><a href="#">Environment</a></li><li class="open"><a href="#">Space</a></li><li class="open"><a href="#">Medicine</a></li><li class="open"><a href="#">Gaming</a></li></ul>
+          </li>
+          <li class="cat expandable"><a href>Culture</a>
+            <ul><li class="open"><a href="#">Visual Arts</a></li><li class="open"><a href="#">Performing Arts</a></li><li class="open"><a href="#">Literature</a></li><li class="open"><a href="#">Music</a></li><li class="open"><a href="#">TV & Films</a></li><li class="open"><a href="#">LGBTQIA*</a></li><li class="open"><a href="#">Sports</a></li></ul>
+          </li>
+          <li class="cat expandable"><a href>Life</a>
+            <ul><li class="open"><a href="#">Food</li><li class="open"><a href="#">Travel</a></li><li class="open"><a href="#">Home</a></li><li class="open"><a href="#">Education</a></li></a><li class="open"><a href="#">Mental Health</a></li><li class="open"><a href="#">Economics</a></li></ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </header>
+
+<!-- </div> -->
+
+
+
+<div id="news-template" v-cloak>
+
+  <!-- Main Story -->
+
+
+  <header>
+
+    <div class="content">
+
+      <div class="title">{{ story.title }}</div>
+
+      <div class="subtitle">{{ story.subtitle }}</div>
+
+      <!-- {{ these are called tokens }} -->
+
+
+
+      <div class="caption">{{ story.image.caption }}
+        <p class="author">Written by <a href="#author_footer">Jane Doe</a> for 
+          <a class="source" v-bind:href="story.source.url">{{ story.source.name }}</a> on {{ story.date }}</p>
+        </div>
+
+        <br>
+
+        <span v-for="tag in story.tags" class="tags"><a href="https://www.washingtonpost.com/">{{ tag }}</a></span>
+        
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="header"><img v-bind:src="story.image.url"></div>
+
+
+      <div class="bar"></div>
+
+      <article>
+
+        <div class="teaser"><span v-html="story.teaser"></span></div> 
+
+
+
+        <span v-html="story.content"></span>
+        <div class="pullquote">Interdum duis dictumst platea taciti sapien potenti, nullam suscipit dolor nisl himenaeos mauris, felis dictumst in aliquam primis curae ac ad sociosqu convallis dolor lacinia aenean tellus imperdiet sapien etiam.<div class="bar"></div></div>
+        <span v-html="story.content"></span>
+
+        <br>
+        <div class="bar"></div>
+
+        <div id="author_footer">
+          <br>
+          <p>Follow
+            {{ story.image.caption }}
+            <!-- hierarchy abt what's in the token: story then img then caption -->
+            <a class="source" v-bind:href="story.source.url">{{ story.source.name }}</a>
+            on &nbsp;
+            <a href="https://twitter.com"><img src="https://www.iconsdb.com/icons/preview/black/twitter-xxl.png"></a>
+            &nbsp;
+            <a href="https://facebook.com"><img src="https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/facebook-icon-256.png"></a> 
+            &nbsp;
+            <a href="https://medium.com"><img src="https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/3377341091551941703-256.png"></a>
+
+            <br><br>
+
+            <div id="jane">
+
+              <img src="https://vignette.wikia.nocookie.net/unidentified/images/0/0d/CCC.jpg/revision/latest/scale-to-width-down/200?cb=20151209010425">
+              <a href="story.source.url">Jane Doe</a> is a journalist with interests in politics, fashion, and how those two intersect. She lives in New York City with her two cats Linden and John.
+            </div>
+
+          </div>
+          <br><br>
+          <div class="bar"></div>
+
+        </article>
+        <!-- txt includes html markup of their own. putting v-html helps "view" render as such -->
+      </div>
+
+      <div class="content">
+       <span class="related_header">Recent Stories</span>
+       <ul class="related">
+        <li class="related_single" v-for="relatedStory in relatedStories">
+          <div v-on:click="load(relatedStory)">
+
+            <img v-bind:src="relatedStory.image.url">
+            <p>{{ relatedStory.title }}</p>
+          </div>
+        </li>
+
+              <!-- <li class="related_single" v-for="topStory in topStories">
+                <div v-on:click="load(topStory)">
+                
+                <img v-bind:src="topStory.image.url">
+                <p>{{ topStory.title }}</p>
+                </div>
+              </li> -->
+            </ul>
+          </div>
+  </div>
+
+       
+        <footer>
+          <div class="content">
+            <div class="block">
+              <h3>Get your news quick.</h3>
+              Newsflash is a mock news site coded in HTML, CSS, and JavaScript by <a href="http://bylee.myportfolio.com">Miles Lee</a> for <a href="http://layout2020spring.wudesign.me/">Layout Systems</a> at WashU in Spring 2020, with articles  generated by <a href="https://newsapi.org/">NewsAPI</a>.
+              <br><br>
+              © 2020 Newsflash
+            </div>
+            <div class="block">
+              <h3>About Newsflash</h3>
+              <a href="#">Subscribe</a><br>
+              <a href="#">Mission Statement</a><br>
+              <a href="#">Privacy Policy</a><br>
+              <a href="#">Terms & Conditions</a><br>
+              <a href="#">Careers</a><br>
+              <input type="text" placeholder="Search">
+            </div>
+            <div class="block">
+              <h3>Follow us</h3>
+              <a href="#"><img src="facebook.png"></a> &nbsp;&nbsp;
+              <a href="#"><img src="twitter.png"></a> &nbsp;&nbsp;
+              <a href="#"><img src="linkedin.png"></a> &nbsp;&nbsp;
+              <br><br>
+              <a href="#">RSS Feed</a><br>
+              <a href="#">Site Map</a><br>
+              <a href="#">Store</a>
+
+              <br><br><br>
+            </div>
+          </div>
+        </footer>
+
+
+        <!-- page renders w/o waiting for javascript -->
+
+        <!-- Scripts here are what load the Vue library, and the actual story content. -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://abesiemsen.github.io/layout2020spring-resources/projects/news-story-template/data.js"></script>
+
+        <script src="script.js"></script>
+
+      </body>
+      </html>
