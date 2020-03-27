@@ -38,7 +38,7 @@ body {
 
 .title {
 	color:black;
-	font-size:2em;
+	font-size:1.5em;
 	line-height:1.25;
 	margin-top:1em;
 	margin-bottom:1em;
@@ -60,13 +60,13 @@ header {
 
 .content {
 	/*margin-top:calc(300px)*/;
-	margin: 1em 1em 1em 1em;
+	margin: 1em 0.75em;
 	margin-top:0em;
-	max-width:85%;
+	max-width:90%;
 	font-size:1.2em;
 	padding-bottom:20em;
 	background-color:;
-	padding:2em;
+	padding:1.25em;
 	font-family:'Noto Serif SC';
 }
 
@@ -144,14 +144,12 @@ input placeholder {
 
 @media (max-width: 640px) {
 
-	.content {
-		margin: auto;
-	}
-
 	.topbar .content {
-		margin-top:-0.5em;
-		margin-bottom:-0.5em;
+		margin-top:0em;
+		margin-left:0.5em;
+		margin-bottom:0em;
 		font-family:'Roboto Slab';
+		font-size:1em;
 	}
 
 	.newsflash a {
@@ -173,7 +171,7 @@ input placeholder {
 		color:black;
 		font-size:1em;
 		background-color:white;
-		margin:1.5em -2em;
+		margin:1.2em -1.75em;
 	}
 
 	.space {
@@ -201,7 +199,7 @@ input placeholder {
 	}
 
 	.menu .expandable:first-child {
-		padding-top:1em;
+		/*padding-top:1em;*/
 	}
 
 	.menu .nav a {
@@ -236,19 +234,19 @@ input placeholder {
 	}
 
 	.hamburger_b {
-		width:1em;
+		width:0.9em;
 		position:absolute;
 		isibility:visible;
 		display:inline;
-		margin: 2.2em 0.7em;
+		margin: 1.6em 0.5em;
 	}
 
 	.hamburger_w {
+		width:0.9em;
 		position:absolute;
 		isibility:visible;
 		display:inline;
-		margin: 2.2em 0.7em;
-		width:1em;
+		margin: 1.6em 0.5em;
 	}
 
 	.topbar .hamburger_w {
@@ -355,6 +353,8 @@ input placeholder {
 	.space {
 		transition-duration:1s;
 		height:1em;
+		width:100vw;
+		margin:0;
 		background-color:white;
 	}
 
@@ -485,7 +485,7 @@ input placeholder {
 
 
 .topbar img {
-	height:0.9em;
+	height:0.7em;
 }
 
 
@@ -754,6 +754,39 @@ article p {
 	font-weight:bold;
 	font-size:2em;
 	margin-bottom:2em;
+}
+
+
+@media (max-width: 640px) { /*mobile view*/
+
+	.content {
+		margin: auto;
+		max-width:90%;
+	}
+
+	.subtitle {
+		font-size:0.9em;
+	}
+
+	.caption {
+		font-size:0.9em;
+	}
+
+	.tags {
+		font-size:0.8em;
+	}
+
+	article {
+		font-size:0.8em;
+	}
+
+	.related_header {
+		font-size:1.5em;
+	}
+
+	.related {
+		font-size:0.8em;
+	}
 }
 
 
