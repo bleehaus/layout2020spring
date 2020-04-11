@@ -6,9 +6,43 @@ html {
 	line-height:1.8;
 }
 
+* {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+	margin-top:3em;
+	font-family: 'Montserrat', sans-serif;
+	font-weight:800;
+}
+
+h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight:800;
+}
+
+h4 {
+	/*for page titles*/
+	font-family: 'Montserrat', sans-serif;
+	margin-top:2em;
+}
+
+p {
+	line-height:1.5;
+}
+
+em {
+	font-weight:600;
+}
+
+.disclaimer {
+	font-size:1em;
+}
+
 .uk-navbar-container {
 	font-family: 'Montserrat', sans-serif;
 	line-height:1.4;
+	background-color:rgba(67, 87, 99, 1);
 }
 
 .uk-navbar-container img {
@@ -21,13 +55,62 @@ html {
 	max-width:800px;
 }
 
+.uk-card-default h4 {
+	margin:0;
+}
+
 .uk-card-default {
-	margin:3em 0em;
+	background-color:rgba(243, 199, 91, 0.5);
+	color:black;
+	margin: 3em 0em;
 }
 
 .uk-card-default img {
 	float:right;
 }
 
-.uk-card-title {
+.uk-card-secondary {
+	background-color:rgba(67, 87, 99, 0.4);
+	color:black;
+	margin: 3em 0em;
+}
+
+.uk-card-body {
+	color:black;
+}
+
+.uk-accordion li {
+	background-color:rgba(243, 199, 91, 0.5);
+	color:black;
+	padding:2em;
+	margin: 2em 0em;
+}
+
+.uk-accordion-title {
+	font-weight:600;
+}
+
+
+
+footer {
+	color:white;
+	background-color:rgba(67, 87, 99, 1);
+}
+
+footer p {
+	margin-top:3em;
+}
+
+footer ul {
+	list-style-type: none;
+	display:flex;
+	margin:1em 0em;
+	padding:0;
+	font-size:0.8em;
+}
+
+footer li {
+	list-style-type: none;
+	margin:4em 0em;
+	width:120%;
 }
