@@ -19,10 +19,35 @@
     <div class="uk-navbar-container" uk-navbar="boundary-align: true; align: center;">
         <div class="uk-container">
         <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav uk-hidden@m">
+                <button class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav"></button>
+            </ul>
+            <div id="offcanvas-nav" uk-offcanvas="overlay: true; mode: none" z-index="0">
+
+                <div class="uk-offcanvas-bar">
+                    <div class="uk-container">
+                    <div class="inception">
+                        <button class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon inception" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav"></button>
+
+                        <img src="images/sqsh logo.png" class=""><a href="index.html">&nbsp;&nbsp;&nbsp;<b>SQSH</b></a>
+                    </div>
+                    
+                    <ul class="uk-nav uk-nav-default">
+                        <br><br>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="helpline.html">The Helpline</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li class="uk-active"><a href="getinvolved.html">Get Involved</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
             <div class="uk-navbar-item"><img src="images/sqsh logo.png"></div>
             <li class="uk-navbar-nav"><a href="index.html"><b>SQSH</b></a></li>
             <div class="uk-navbar-item">&nbsp;</div>
-            <ul class="uk-navbar-nav">
+            <ul class="uk-navbar-nav uk-visible@m">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="helpline.html">The Helpline</a></li>
@@ -34,7 +59,7 @@
         </div>
     </div>
     </div>
-    </header>
+</header>
 
     <div class="uk-background-fixed uk-background-center-right uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/banner_involved.png);">
         <div class="uk-container">
@@ -54,13 +79,13 @@
 
     <ul uk-accordion>
         <li>
-            <a class="uk-accordion-title" href="#">Become a Peer Support Volunteer</a>
+            <a class="uk-accordion-title" href="#">Peer Support Volunteer</a>
             <div class="uk-accordion-content">
             <p>Are you a person who people come to when they need support? Ever wanted to hone your listening skills? Interested in improving the lives of LGBTQIA+ folx in St. Louis by connecting them to identity-affirming resources? Join the St. Louis Queer+ Support Helpline as a volunteer! We offer free meals, transportation (metro passes and a year-round carpool system), training in peer support skills, and assistance with career development (resume-building and letters of recommendation). You gain valuable helpline work experience, peer support skills, and crisis intervention techniques. You also join a supportive, empowering community of empathetic, dedicated LGBTQIA+ persons and allies!
             <br><br>
             Folx who have personal experiences with or strong understandings of multiple marginalized identities (e.g. queer+ & trans folx of color) are especially encouraged to apply! To be considered for membership in the Helpline, please answer the following questions. We encourage you to apply as soon as you can as we accept applications on a rolling basis. Do limit each response to one paragraph. Please fill out either an online application OR print out the written application.  Know someone who might be interested in joining? Share and nominate them using the nominate a friend application, and we'll reach out to them. 
             <br><br>
-            <b>Note:</b> Applications for Summer 2020 are open from March 16 to April 17, 2020.</p>
+            <em>Note:</em> Applications for Summer 2020 are open from March 16 to April 17, 2020.</p>
             <center>
             <a class="uk-button uk-button-default" href="http://www.google.com/url?q=http%3A%2F%2Ftinyurl.com%2FSQSHApply2020&sa=D&sntz=1&usg=AFQjCNHiFr4iQgtwCaVfuxD8RFDKKFxTiw">Online Application</a>
 
@@ -71,9 +96,20 @@
 
         </li>
         <li>
-            <a class="uk-accordion-title" href="#">Join the SQSH Project Team</a>
+            <a class="uk-accordion-title" href="#">SQSH Project Team</a>
             <div class="uk-accordion-content">
-                <p>Get involved in SQSH! We are a free, confidential, and identity-affirming peer support helpline service run by volunteers in the St. Louis LGBTQIA+ community, for the community. We work to serve and strengthen St. Louis - by providing an empathetic listening ear, by connecting callers safely and reliably to LGBTQIA-affirming resources, and by increasing the visibility of LGBTQIA+ concerns, needs, and resources in the St. Louis region.</p>
+                <p>
+                    Get involved in SQSH! We are a free, confidential, and identity-affirming peer support helpline service run by volunteers in the St. Louis LGBTQIA+ community, for the community. We work to serve and strengthen St. Louis - by providing an empathetic listening ear, by connecting callers safely and reliably to LGBTQIA-affirming resources, and by increasing the visibility of LGBTQIA+ concerns, needs, and resources in the St. Louis region.
+                    <br><br>
+                    We believe in deconstructing mainstream society's power structure and dynamics that perpetuate inequalities both within and outside of the LGBTQIA+ community. As such, we are a non-hierarchical organization that values mutual trust and every member's opinion. When you join SQSH's Project Team, you will gain equal say in SQSH's operations as everyone else on the Project Team.
+                    <br><br>
+                    <em>Note:</em> All roles require availability on Saturday 10AM-12PM at least once a month.
+
+                </p>
+
+                <center><a class="uk-button uk-button-default" href="https://www.thesqsh.org/support-our-work/sqsh-project-team">Open Positions</a>
+
+                <a class="uk-button uk-button-default" href="https://docs.google.com/forms/d/e/1FAIpQLSfmjrVZwZhQSQASz5a-Dd922ombPQyOmvm_s9rMHMlcffZtbQ/viewform">Apply here!</a></center>
             </div>
         </li>
 
@@ -123,13 +159,52 @@
         </li>
     </ul>
 
-
+    <br>
 
     <h3>Become a Community Partner</h3>
-    <p>info</p>
+
+        <p>Our community partners help us do the work that we do. They include the Metro Trans Umbrella Group (MTUG), Trans Education Service (TES), Black Pride, NCCJ St. Louis, the National Council for Alcoholism and Drug Abuse (NCADA), Behavioral Health Response (BHR), Provident Crisis Services (PCS), and others. If you or your organization is interested in partnering with SQSH, please complete an application. We'll be in touch.
+
+        <center><a class="uk-button-primary uk-button" href="https://forms.gle/8rf526Eg7ypsXit67">Apply now!</a></p></center>
+
+        <div class="partners">
+            <a href="https://www.stlmetrotrans.org/"><img src="images/partners/mtug.png" alt="MTUG"></a>
+            <a href="https://promoonline.org/"><img src="images/partners/promo.png" alt="PROMO"></a>
+            <a href="https://www.facebook.com/transqueerflat/"><img src="images/partners/tqf.jpg" alt="Trans Queer Flat"></a>
+            <a href="https://www.blackpridestl.org/"><img src="images/partners/blackpride.jpg" alt="Black Pride"></a>
+            <a href="https://www.aclu-mo.org/"><img src="images/partners/aclumo.png" alt="ACLU MO"></a>
+            <a href="https://www.transedservice.com/"><img src="images/partners/tes.png" alt="TES"></a>
+            <a href="http://www.stlavp.org/"><img src="images/partners/stlavp.png" alt="STLAVP"></a>
+            <a href="https://www.stlouis-mo.gov/government/departments/civil-rights-enforcement/"><img src="images/partners/crea.jpg" alt="CREA"></a>
+            <a href="https://safeconnections.org/"><img src="images/partners/safeconnections.png" alt="Safe Connections"></a>
+            <a href="https://www.ywcastl.org/"><img src="images/partners/ywca.jpg" alt="YWCA"></a>
+            <a href="http://ncada-stl.org/"><img src="images/partners/ncada.jpg" alt="NCADA"></a>
+            <a href="https://www.independencecenter.org/"><img src="images/partners/independence.png" alt="Independence Center"></a>
+            <a href="https://www.providentstl.org/"><img src="images/partners/pcs.jpg" alt="Provident Crisis Services"></a>
+            <a href="https://www.stlvolunteer.org/organization/001E000000KWIf3IAH"><img src="images/partners/kuto.png" alt="KUTO"></a>
+            <a href="https://www.nccjstl.org/"><img src="images/partners/nccj.jpg" alt="NCCJ St. Louis"></a>
+            <a href="http://bhrstl.org/"><img src="images/partners/bhr.jpg" alt="BHR"></a>
+        </div>
+
+    <br><br><br>
 
     <h3>Spread the word</h3>
-    <p>info</p>
+    <p>
+        There are more ways to get involved besides volunteering. Any help spreading the word about who we are and what we do is both valued and appreciated. Don't forget to keep up with us! Follow us and share our stuff on social media. Feel free to download or print our flyers below. Put up a SQSH flyer in your workplace, school, or community space to raise visibility for LGBTQIA+ resources, and let the queer folx in your lives know that they have a listening ear available to them!
+
+        <center><a class="uk-button-primary uk-button" href="https://forms.gle/3U4WZazioSGvoGKS7">Media Requests</a>
+
+        <a class="uk-button-primary uk-button" href="https://drive.google.com/open?id=15WU1siIZPIcrSgyzhJt0TVz-jHp8vQe5">General Flyers</a>
+
+        <a class="uk-button-primary uk-button" href="https://drive.google.com/open?id=11EFkHRFaGm1YXU7upAai8yL4W0t0xsME">Handout sheets</a>
+
+        <a class="uk-button-primary uk-button" href="https://drive.google.com/open?id=1UlbOxRTTk1QnHIvPrMFYrxhBjJhNN3Fr">Recruitment Flyers</a></p></center>
+
+        
+
+        
+
+    </p>
         
 
     </div>

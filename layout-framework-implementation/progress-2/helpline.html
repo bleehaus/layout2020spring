@@ -19,10 +19,35 @@
     <div class="uk-navbar-container" uk-navbar="boundary-align: true; align: center;">
         <div class="uk-container">
         <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav uk-hidden@m">
+                <button class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav"></button>
+            </ul>
+            <div id="offcanvas-nav" uk-offcanvas="overlay: true; mode: none" z-index="0">
+
+                <div class="uk-offcanvas-bar">
+                    <div class="uk-container">
+                    <div class="inception">
+                        <button class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon inception" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav"></button>
+
+                        <img src="images/sqsh logo.png" class=""><a href="index.html">&nbsp;&nbsp;&nbsp;<b>SQSH</b></a>
+                    </div>
+                    
+                    <ul class="uk-nav uk-nav-default">
+                        <br><br>
+                        <li><a href="#">Home</a></li>
+                        <li class="uk-active"><a href="helpline.html">The Helpline</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="getinvolved.html">Get Involved</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
             <div class="uk-navbar-item"><img src="images/sqsh logo.png"></div>
             <li class="uk-navbar-nav"><a href="index.html"><b>SQSH</b></a></li>
             <div class="uk-navbar-item">&nbsp;</div>
-            <ul class="uk-navbar-nav">
+            <ul class="uk-navbar-nav uk-visible@m">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li class="uk-active"><a href="helpline.html">The Helpline</a></li>
@@ -34,7 +59,7 @@
         </div>
     </div>
     </div>
-    </header>
+</header>
 
     <div class="uk-background-fixed uk-background-center-center uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/banner_helpline.png);">
         <div class="uk-container">
@@ -54,8 +79,28 @@
             We are a short-term volunteer peer-counseling service. While we are guided by our Clinical Supervisors, we are no substitute for long-term, professional mental health care. Please visit MTUG's list of vetted providers or SQSHBook (once it launches in 2020) to contact a mental healthcare provider in the Greater St. Louis area.
         </p>
 
-        <h3>How to use the Helpline</h3>
+        <iframe width="100%" height="400px"  margin="-1em" src="https://www.youtube.com/embed/_O-BbAy9o1E" frameborder="0"allowfullscreen></iframe>
 
+        <h3>How to use the Helpline</h3>
+        <h4>Step 1: Call <a href="tel:314-380-7774">314-380-7774</a> (local) or <a href="tel:844-785-7774">844-785-7774</a> (toll free)</h4>
+        <p>
+            If you <b>are</b> in a mental health crisis:<br>Press "1" to reach <a href="http://bhrstl.org/">Behavioral Health Response's</a> 24/7 crisis hotline.<br><br> If you are <b>not</b> in a mental health crisis:<br>Press "2" or wait on the line to reach SQSH. Once connected, one of our peer support volunteers will introduce the Helpline and share their name and pronouns.
+        </p>
+        <h4>Step 2: Tell the volunteer if you are in a safe place to talk</h4>
+        <p>
+            If you are <b>not</b> in a safe place to talk:<br> The volunteer will work with you to explore options where you can talk with us most safely and comfortably.<br><br>If you <b>are</b> in a safe place to talk: <br>The volunteer will ask how they can address you. We welcome you to provide them with your name (or a pseudonym), as well as your pronouns if you’d like.
+        </p>
+
+        <h4>Step 3: Talk to the volunteer</h4>
+        <p>
+            The volunteer will then ask what you would like to talk about today. Go ahead and share as much or as little as you’d like with them. They're here to listen.
+        </p>
+
+        <h4>Step 4: Wrapping up</h4>
+        <p>
+            At the end of your call, we may ask you to fill out a brief, anonymous <a href="http://www.google.com/url?q=http%3A%2F%2Ftinyurl.com%2FSQSHSurvey&sa=D&sntz=1&usg=AFQjCNEBqPX8Yseu-CMmw2Gf8iG_TdddfA">online survey</a> about your call experience. We value your feedback and will use it to better serve you and the rest of our community. If you can, do something nice to take care of yourself and decompress after the call!<br><br>We welcome you to call back again anytime between Friday - Monday, 1PM - 7PM.
+        </p>
+<!-- 
         <ul uk-accordion="multiple: true">
             <li>
                 <a class="uk-accordion-title" href="#">Step 1: Call 314-380-7774</a>
@@ -73,7 +118,7 @@
                 <a class="uk-accordion-title" href="#">Step 4: After the call</a>
                 <div class="uk-accordion-content"> At the end of your call, we may ask you to fill out a brief, anonymous <a href="http://www.google.com/url?q=http%3A%2F%2Ftinyurl.com%2FSQSHSurvey&sa=D&sntz=1&usg=AFQjCNEBqPX8Yseu-CMmw2Gf8iG_TdddfA">online survey</a> about your call experience. We value your feedback and will use it to better serve you and the rest of our community. If you can, do something nice to take care of yourself and decompress after the call! We welcome you to call back again anytime between Friday - Monday, 1PM - 7PM. </div>
             </li>
-        </ul>
+        </ul> -->
 
         <h3>Helpline Features</h3>
 

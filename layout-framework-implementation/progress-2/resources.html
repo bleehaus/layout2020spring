@@ -14,15 +14,40 @@
 
 <body>
 
-    <header>
+<header>
     <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
     <div class="uk-navbar-container" uk-navbar="boundary-align: true; align: center;">
         <div class="uk-container">
         <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav uk-hidden@m">
+                <button class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav"></button>
+            </ul>
+            <div id="offcanvas-nav" uk-offcanvas="overlay: true; mode: none" z-index="0">
+
+                <div class="uk-offcanvas-bar">
+                    <div class="uk-container">
+                    <div class="inception">
+                        <button class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon inception" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav"></button>
+
+                        <img src="images/sqsh logo.png" class=""><a href="index.html">&nbsp;&nbsp;&nbsp;<b>SQSH</b></a>
+                    </div>
+                    
+                    <ul class="uk-nav uk-nav-default">
+                        <br><br>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="helpline.html">The Helpline</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="uk-active"><a href="resources.html">Resources</a></li>
+                        <li><a href="getinvolved.html">Get Involved</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
             <div class="uk-navbar-item"><img src="images/sqsh logo.png"></div>
             <li class="uk-navbar-nav"><a href="index.html"><b>SQSH</b></a></li>
             <div class="uk-navbar-item">&nbsp;</div>
-            <ul class="uk-navbar-nav">
+            <ul class="uk-navbar-nav uk-visible@m">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="helpline.html">The Helpline</a></li>
@@ -34,7 +59,7 @@
         </div>
     </div>
     </div>
-    </header>
+</header>
 
     <div class="uk-background-fixed uk-background-bottom-center uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/banner_resources.png);">
         <div class="uk-container">
@@ -51,8 +76,20 @@
     <div class="uk-container">
 
     <h3>SQSHbook</h3>
+    <p>
+        Let SQSH show you St. Louis! The SQSHbook is a curated database of LGBTQIA+ resources throughout the St. Louis Region. Find support for housing, food, and healthcare, or join a support group and attend queer social events. We're working hard to bring the SQSHbook to you before Summer 2020!
+    </p>
+    
+    <h3>LGBT-affirming Businesses</h3>
+    <p>
+        This is under construction! For now, you can explore the map to find LGBTQIA+ friendly businesses and spaces around the St. Louis region, brought to you by an STL lover.
+        <iframe src="https://www.google.com/maps/d/embed?mid=1yxk-FPDSwSf50Fwrw9fKVNLefiA" width="100%" height="480"></iframe>
+    </p>
 
     <h3>Self Care</h3>
+    <p>
+        This is under construction!
+    </p>
         
 
     </div>

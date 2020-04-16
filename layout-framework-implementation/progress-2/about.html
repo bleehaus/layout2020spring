@@ -14,16 +14,41 @@
 
 <body>
 
-    <header>
+<header>
     <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
     <div class="uk-navbar-container" uk-navbar="boundary-align: true; align: center;">
         <div class="uk-container">
         <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav uk-hidden@m">
+                <button class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav"></button>
+            </ul>
+            <div id="offcanvas-nav" uk-offcanvas="overlay: true; mode: none" z-index="0">
+
+                <div class="uk-offcanvas-bar">
+                    <div class="uk-container">
+                    <div class="inception">
+                        <button class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon inception" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav"></button>
+
+                        <img src="images/sqsh logo.png" class=""><a href="index.html">&nbsp;&nbsp;&nbsp;<b>SQSH</b></a>
+                    </div>
+                    
+                    <ul class="uk-nav uk-nav-default">
+                        <br><br>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="helpline.html">The Helpline</a></li>
+                        <li class="uk-active"><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="getinvolved.html">Get Involved</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
             <div class="uk-navbar-item"><img src="images/sqsh logo.png"></div>
             <li class="uk-navbar-nav"><a href="index.html"><b>SQSH</b></a></li>
             <div class="uk-navbar-item">&nbsp;</div>
-            <ul class="uk-navbar-nav">
-                <li><a href="index.html">Home</a></li>
+            <ul class="uk-navbar-nav uk-visible@m">
+                <li ><a href="index.html">Home</a></li>
                 <li class="uk-active"><a href="about.html">About Us</a></li>
                 <li><a href="helpline.html">The Helpline</a></li>
                 <li><a href="resources.html">Resources</a></li>
@@ -34,9 +59,7 @@
         </div>
     </div>
     </div>
-    </header>
-
-
+</header>
 
     <div class="uk-background-fixed uk-background-center-right uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/banner_about.png);">
         <div class="uk-container">
@@ -51,14 +74,28 @@
         <!-- <h2>About Us</h2>
         <h4>Every LGBTQIA+ person deserves to be treated kindly and access the community resources we need to lead fulfilling lives. As members of the queer community, we have experienced firsthand the isolation, stigmatization, and fear that can arise from the lack of understanding and acceptance by the people around us. Many of us would have led different lives or made different decisions if we had a supportive, empathetic LGBTQIA+ peer to talk to when we were going through a hard time. That’s why we set up SQSH&mdash;a source of free, confidential, and identity-affirming peer support, by the St. Louis queer community, for the community.</h4> -->
 
+        <br><br>
 
-        <h3>A Message from SQSH's Founder</h3>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <div class="uk-background uk-background-fixed uk-height-small uk-background-bottom-center uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/banner_resources2.png);">
+                <h4><b>"I had always wished that there was an unconditionally supportive, non-judgmental LGBTQIA+ peer I could confide in and feel understood by."</b></h4></a>
+        </div>
+            </div>
+            <div class="uk-card-body">
+                “Hi! I’m  a trans-masculine, genderqueer, and pansexual individual who was born and raised in Singapore, which I experienced to be a highly homophobic and transphobic country. Without any queer role models to look up to or supportive peers to talk to, I grew up feeling isolated, stigmatized, and afraid. I only found the courage to come out when I came to the U.S., joined the St. Louis LGBTQIA+ community, and found myself in a much more queer-affirming environment. I had always wished that there was an unconditionally supportive, non-judgmental LGBTQIA+ peer I could confide in and feel understood by. That’s why I’m passionate about setting up a LGBTQIA+ peer support helpline for the St. Louis region&mdash;to create a resource I wish I had, and to give back to the community that welcomed me.”<br>
+             <p align="right">&mdash;Luka Cai (they/them), SQSH Founder</p>
+            </div>
+        </div>
+
+
+        <!-- <h3>A Message from SQSH's Founder</h3>
 
         <div class="uk-card-default uk-card-body">
             <img src="images/team/luka.png">
              “Hi! I’m  a trans-masculine, genderqueer, and pansexual individual who was born and raised in Singapore, which I experienced to be a highly homophobic and transphobic country. Without any queer role models to look up to or supportive peers to talk to, I grew up feeling isolated, stigmatized, and afraid. I only found the courage to come out when I came to the U.S., joined the St. Louis LGBTQIA+ community, and found myself in a much more queer-affirming environment. I had always wished that there was an unconditionally supportive, non-judgmental LGBTQIA+ peer I could confide in and feel understood by. That’s why I’m passionate about setting up a LGBTQIA+ peer support helpline for the St. Louis region&mdash;to create a resource I wish I had, and to give back to the community that welcomed me.”<br>
              <p align="right">&mdash;Luka Cai (they/them), SQSH Founder</p>
-        </div>
+        </div> -->
 
 
         <h3>Our Team</h3>
@@ -546,18 +583,18 @@
             <a href="https://promoonline.org/"><img src="images/partners/promo.png" alt="PROMO"></a>
             <a href="https://www.facebook.com/transqueerflat/"><img src="images/partners/tqf.jpg" alt="Trans Queer Flat"></a>
             <a href="https://www.blackpridestl.org/"><img src="images/partners/blackpride.jpg" alt="Black Pride"></a>
-            <img src="images/partners/aclumo.png" alt="ACLU MO">
-            <img src="images/partners/tes.png" alt="TES">
-            <img src="images/partners/stlavp.png" alt="STLAVP">
-            <img src="images/partners/crea.jpg" alt="CREA">
-            <img src="images/partners/safeconnections.png" alt="Safe Connections">
-            <img src="images/partners/ywca.jpg" alt="YWCA">
-            <img src="images/partners/ncada.jpg" alt="NCADA">
-            <img src="images/partners/independence.png" alt="Independence Center">
-            <img src="images/partners/pcs.jpg" alt="PCS">
-            <img src="images/partners/kuto.png" alt="KUTO">
-            <img src="images/partners/nccj.jpg" alt="NCCJ St. Louis">
-            <img src="images/partners/bhr.jpg" alt="BHR">
+            <a href="https://www.aclu-mo.org/"><img src="images/partners/aclumo.png" alt="ACLU MO"></a>
+            <a href="https://www.transedservice.com/"><img src="images/partners/tes.png" alt="TES"></a>
+            <a href="http://www.stlavp.org/"><img src="images/partners/stlavp.png" alt="STLAVP"></a>
+            <a href="https://www.stlouis-mo.gov/government/departments/civil-rights-enforcement/"><img src="images/partners/crea.jpg" alt="CREA"></a>
+            <a href="https://safeconnections.org/"><img src="images/partners/safeconnections.png" alt="Safe Connections"></a>
+            <a href="https://www.ywcastl.org/"><img src="images/partners/ywca.jpg" alt="YWCA"></a>
+            <a href="http://ncada-stl.org/"><img src="images/partners/ncada.jpg" alt="NCADA"></a>
+            <a href="https://www.independencecenter.org/"><img src="images/partners/independence.png" alt="Independence Center"></a>
+            <a href="https://www.providentstl.org/"><img src="images/partners/pcs.jpg" alt="Provident Crisis Services"></a>
+            <a href="https://www.stlvolunteer.org/organization/001E000000KWIf3IAH"><img src="images/partners/kuto.png" alt="KUTO"></a>
+            <a href="https://www.nccjstl.org/"><img src="images/partners/nccj.jpg" alt="NCCJ St. Louis"></a>
+            <a href="http://bhrstl.org/"><img src="images/partners/bhr.jpg" alt="BHR"></a>
         </div>
 
 <!--         <div class="partners">

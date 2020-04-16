@@ -12,29 +12,59 @@
 
 </head>
 
-<body>
+<body class="index">
 
-    <header>
+<header>
     <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
     <div class="uk-navbar-container" uk-navbar="boundary-align: true; align: center;">
         <div class="uk-container">
         <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav uk-hidden@m">
+                <button class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav"></button>
+            </ul>
+            <div id="offcanvas-nav" uk-offcanvas="overlay: true; mode: none" z-index="0">
+
+                <div class="uk-offcanvas-bar">
+                    <div class="uk-container">
+                    <div class="inception">
+                        <button class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon inception" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav"></button>
+
+                        <img src="images/sqsh logo.png" class=""><a href="index.html">&nbsp;&nbsp;&nbsp;<b>SQSH</b></a>
+                    </div>
+
+                    <ul class="uk-nav uk-nav-default">
+                        <br><br>
+                        <li class="uk-active"><a href="#">Home</a></li>
+                        <li><a href="helpline.html">The Helpline</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="getinvolved.html">Get Involved</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+
+                </div>
+                </div>
+            </div>
             <div class="uk-navbar-item"><img src="images/sqsh logo.png"></div>
             <li class="uk-navbar-nav"><a href="index.html"><b>SQSH</b></a></li>
             <div class="uk-navbar-item">&nbsp;</div>
-            <ul class="uk-navbar-nav">
+            <ul class="uk-navbar-nav uk-visible@m">
                 <li class="uk-active"><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="helpline.html">The Helpline</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="getinvolved.html">Get Involved</a></li>
                 <li><a href="faq.html">FAQ</a></li>
+                
+                <!-- <a class="uk-button uk-button-default uk-navbar-toggle uk-navbar-toggle-icon" uk-navbar-toggle-icon href="target: #offcanvas-nav"></a> -->
             </ul>
+            
         </div>
         </div>
+
     </div>
     </div>
-    </header>
+</header>
 
     <div class="uk-background-fixed uk-background-center-center uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/banner_home.png);">
         <div class="uk-container">
@@ -54,11 +84,23 @@
 
     <div class="uk-container">
 
-        <br><br><br>
         
-        <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
+        <br><br>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <div class="uk-background uk-background-fixed uk-height-small uk-background-center-right uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/banner_helpline.png);">
+                <h4><b>What we do</b></h4></a>
+        </div>
+            </div>
+            <div class="uk-card-body">
+
+                We are a free, confidential, identity-affirming, and volunteer-led helpline serving the St. Louis community. For any LGBTQIA+ needs, questions, or concerns, our helpline volunteers provide an empathetic listening ear.<br><br>
+                <a class="uk-button uk-button-default" href="helpline.html">The Helpline</a>
+            </div>
+        </div>
+        
+<!--         <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
             <div class="uk-card-media-left uk-cover-container">
-                <!-- <iframe width="100%" height="100%"  margin="-1em" src="https://www.youtube.com/embed/_O-BbAy9o1E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                 <img src="images/banner_helpline.png" alt="" uk-cover>
                 <canvas width="" height=""></canvas>
             </div>
@@ -69,11 +111,27 @@
                     <a class="uk-button uk-button-default" href="helpline.html">The Helpline</a>
                 </div>
             </div>
+        </div> -->
+
+        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/MNG-cmPyZGY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <div class="uk-background uk-background-fixed uk-height-small uk-background-top-right uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/banner_about2.png);">
+                <h4><b>Meet our team</b></h4></a>
         </div>
+            </div>
+            <div class="uk-card-body">
+                SQSH is made up of a passionate group of volunteers. As members of the queer community ourselves, we understand the isolation, stigmatization, and fear that arise from the lack of acceptance from people around us.
+                <br><br>
+                <a class="uk-button uk-button-default" href="about.html">About Us</a>
+            </div>
+        </div>
+        
 
-        <iframe width="100%" height="400px"  margin="-1em" src="https://www.youtube.com/embed/_O-BbAy9o1E" frameborder="0"allowfullscreen></iframe>
+        <!-- <img src="images/sqsh buttons.jpg" class="card"> -->
 
-        <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
+        <!-- <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
             <div>
                 <div class="uk-card-body">
                     <h4><b>Meet Our Team</b></h4><br>
@@ -86,11 +144,27 @@
                 <img src="images/banner_about2.png" alt="" uk-cover>
                 <canvas width="" height=""></canvas>
             </div>
+        </div> -->
+
+        <br>
+        <div class="uk-background uk-height-medium uk-background-center-left uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/buttons.jpg);">
+            <a class="uk-button-default uk-button" href="https://www.stlmag.com/news/lgbtqia-helpline-sqsh/"><h4>STL MAG: New LGBTQIA helpline SQSH aims to provide more support to queer community</h4></a>
+        </div>
+        <br>
+
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <div class="uk-background uk-background-fixed uk-height-small uk-background-center-right uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/banner_about.png);">
+                <h4><b>Join us</b></h4></a>
+        </div>
+            </div>
+            <div class="uk-card-body">
+                We are always looking for motivated individuals passionate about the St. Louis community. Apply to become a helpline volunteer, or join a SQSH project team!<br><br>
+                <a class="uk-button uk-button-default" href="https://forms.gle/NcBukA4Rv8EtY8VC9">Volunteer Opportunities</a>
+            </div>
         </div>
 
-        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/LNj0wbiLtng" frameborder="0" allowfullscreen></iframe>
-
-        <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
+        <!-- <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
             <div class="uk-card-media-left uk-cover-container">
                 <img src="images/banner_about.png" alt="" uk-cover>
                 <canvas width="" height=""></canvas>
@@ -102,7 +176,39 @@
                     <a class="uk-button uk-button-default" href="https://forms.gle/NcBukA4Rv8EtY8VC9">Volunteer Opportunities</a>
                 </div>
             </div>
+        </div> -->
+
+        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/LNj0wbiLtng" frameborder="0" allowfullscreen></iframe>
+
+       <!--  <iframe width="100%" height="400px"  margin="-1em" src="https://www.youtube.com/embed/_O-BbAy9o1E" frameborder="0"allowfullscreen></iframe> -->
+
+       <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <div class="uk-background uk-background-fixed uk-height-small uk-background-bottom-center uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/banner_resources2.png);">
+                <h4><b>Let us show you St. Louis</b></h4></a>
         </div>
+            </div>
+            <div class="uk-card-body">
+                The SQSHbook is a curated database of LGBTQIA+ resources throughout the St. Louis Region. Find support for housing, food, and healthcare, or join a support group and attend queer social events.
+                <br><br>
+                <a class="uk-button uk-button-default" href="resources.html">The SQSHbook</a>
+            </div>
+        </div>
+
+        <!-- <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
+            <div>
+                <div class="uk-card-body">
+                    <h4><b>Let SQSH show you St. Louis</b></h4><br>
+                    The SQSHbook is a curated database of LGBTQIA+ resources throughout the St. Louis Region. Find support for housing, food, and healthcare, or join a support group and attend queer social events.
+                    <br><br>
+                    <a class="uk-button uk-button-default" href="resources.html">The SQSHbook</a>
+                </div>
+            </div>
+            <div class="uk-card-media-right uk-cover-container">
+                <img src="images/banner_resources2.png" alt="" uk-cover>
+                <canvas width="" height=""></canvas>
+            </div>
+        </div> -->
 
 
 
