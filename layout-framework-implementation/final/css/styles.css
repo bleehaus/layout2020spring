@@ -5,6 +5,7 @@ html {
 	global-font-family: 'Montserrat';
 	line-height:1.9;
 	transition-duration:0.5s;
+	background-color:rgba(238, 242, 246, 0.9);
 }
 
 * {
@@ -97,6 +98,7 @@ b {
 	z-index:100;
 	width:100%;
 	display:flex;
+	align-items:center;
 }
 
 .uk-navbar-container a{
@@ -133,8 +135,9 @@ b {
 }
 
 .uk-offcanvas-bar a {
-	margin:1em 0em;
+	margin:0.9em 0em;
 	font-size:2em;
+	/*text-transform:uppercase;*/
 	/*color:rgba(139, 173, 228, 1);*/
 	/*background-color:orange;*/
 }
@@ -381,6 +384,10 @@ iframe {
 	margin:0em 1em;
 }
 
+/*svg {
+	width:1000px;
+}
+*/
 .uk-background-fixed p {
 	margin:3em;
 	padding:3em;
@@ -395,6 +402,7 @@ iframe {
 	color:black;
 	background-color:rgba(249, 251, 252, 0.9);
 	padding:0.2em 0.4em;
+	display:inline;
 }
 
 .uk-background-fixed .call:hover {
@@ -564,8 +572,8 @@ footer a:hover {
 	}
 
 	.uk-navbar-left {
-		height:70px;
-		margin-top:-10px;
+		/*height:60px;*/
+		/*margin-top:-5px;*/
 		/*margin:auto;*/
 	}
 }
